@@ -78,9 +78,36 @@ Standard stuff from the AIST proposal and IGARSS papers
 
 - Table of low level and high level comm issues
 
+#+CAPTION: Low vs. high level communication issues
+#+ATTR_LATEX: :align |l|l|
+|------------------+------------------|
+| *Low Level*      | *High Level*     |
+|------------------+------------------|
+| Bandwidth        | Scheduling       |
+|------------------+------------------|
+| Bitrate          | Packet Contents  |
+|------------------+------------------|
+| Latency          | Satellite Health |
+|------------------+------------------|
+| Path Loss        |                  |
+|------------------+------------------|
+| Center Frequency |                  |
+|------------------+------------------|
+| Doppler          |                  |
+|------------------+------------------|
+
+
 - Summary of different methods for dealing with this problem. Can ML help?
 
-** TABLE I. COMMUNICATION MODEL PARAMETERS
+#+CAPTION: Communication Model Parameters
+#+ATTR_LATEX: :align |l|l|
+|-------------+---------------|
+| *Parameter* | *Description* |
+|-------------+---------------|
+| Blah        | Blah          |
+|-------------+---------------|
+| ...         | ...           |
+|-------------+---------------|
 
 - What is ML?
 
@@ -124,7 +151,18 @@ The custom algorithms discussed are written in C++.
 
 - What is cognition
 
+A cognitive entity is capable of taking action based on its goals and perception
+of the environment, potentially learning from the result of its action.  It is
+an intelligent entity which posesses perception, learning, reasoning, and making
+decisions.
+
 - What is cognitive communications
+
+In the current context, cognitive communication involves the intelligent
+routing of information within an autonomous satellite sensor network for
+collaborative improvement in mission science return.  This concept adds
+collaboration to "adaptive remote sensing" and feedback to traditional
+inter-satellite "communication".
 
 - Example references of how it has been applied
 
@@ -205,9 +243,6 @@ truth data parameters, or to promote sensor hardware reconfiguration.
 #+ATTR_LATEX: :width 0.6\textwidth
 [[./images/loop.pdf]]
 
-#+ATTR_LATEX: :width 0.6\textwidth
-[[./images/regression.png]]
-
 - Key is that it can output large sets of collaborative and adatpive simulation
   results.
 
@@ -237,13 +272,19 @@ matrices.
 
 Description of examples and why they were chosen.
 
-** A. Example 1
+** A. Example 1: Cognitive Communication for Deployed Algorithms
 
-...
 
-** B. Example 2
+#+ATTR_LATEX: :width 0.6\textwidth
+[[./images/loop.pdf]]
 
-...
+#+ATTR_LATEX: :width 0.6\textwidth
+[[./images/regression.png]]
+
+
+** B. Example 2:
+
+Something
 
 * VI. SUMMARY AND NEXT STEPS
 

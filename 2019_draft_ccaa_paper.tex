@@ -1,4 +1,4 @@
-% Created 2019-03-25 Mon 13:22
+% Created 2019-03-25 Mon 15:51
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -39,7 +39,7 @@
 
 \maketitle
 \section*{Abstract}
-\label{sec:org7ab0300}
+\label{sec:org6beeabe}
 
 Future Earth-observing systems will involve distributed missions of autonomous
 and heterogeneous spaceborne sensor networks.  Future sensor webs will occupy a
@@ -54,7 +54,7 @@ these simulations provide training data for machine learning models to explore
 the new decision space.
 
 \section*{I. INTRODUCTION}
-\label{sec:orgdd8b396}
+\label{sec:org6dae6cd}
 
 It is envisioned that NASA's future space systems will be composed of large,
 inhomogeneous networks of small satellites and autonomous platforms.  These
@@ -104,12 +104,12 @@ and the applicability of these methods to future cognitive space communication
 will be discussed.
 
 \section*{II. OVERVIEW OF COLLABORATIVE NETWORKS OF ADAPTIVE SENSORS}
-\label{sec:org28be209}
+\label{sec:org9157046}
 
 Standard stuff from the AIST proposal and IGARSS papers
 
 \section*{III. COGNITION AND HIGH-LEVEL COMMUNICATIONS}
-\label{sec:org5a08676}
+\label{sec:org60024b8}
 
 \begin{itemize}
 \item What it means for low-level and high-level communications
@@ -121,12 +121,50 @@ large scale constraints on the network. What are tuning parameters at this
 high level?
 
 \item Table of low level and high level comm issues
+\end{itemize}
 
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Low Level} & \textbf{High Level}\\
+\hline
+Bandwidth & Scheduling\\
+\hline
+Bitrate & Packet Contents\\
+\hline
+Latency & Satellite Health\\
+\hline
+Path Loss & \\
+\hline
+Center Frequency & \\
+\hline
+Doppler & \\
+\hline
+\end{tabular}
+\caption{Low vs. high level communication issues}
+
+\end{table}
+
+
+\begin{itemize}
 \item Summary of different methods for dealing with this problem. Can ML help?
 \end{itemize}
 
-\subsection*{TABLE I. COMMUNICATION MODEL PARAMETERS}
-\label{sec:orga3f91fc}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Parameter} & \textbf{Description}\\
+\hline
+Blah & Blah\\
+\hline
+\ldots{} & \ldots{}\\
+\hline
+\end{tabular}
+\caption{Communication Model Parameters}
+
+\end{table}
 
 \begin{itemize}
 \item What is ML?
@@ -175,13 +213,28 @@ third-party Python packages is used, including SkikitLearn and Tensorflow.
 The custom algorithms discussed are written in C++.
 
 \subsection*{A. Cognitive Communications}
-\label{sec:org3c4593b}
+\label{sec:orgda10b42}
 
 \begin{itemize}
 \item What is cognition
+\end{itemize}
 
+A cognitive entity is capable of taking action based on its goals and perception
+of the environment, potentially learning from the result of its action.  It is
+an intelligent entity which posesses perception, learning, reasoning, and making
+decisions.
+
+\begin{itemize}
 \item What is cognitive communications
+\end{itemize}
 
+In the current context, cognitive communication involves the intelligent
+routing of information within an autonomous satellite sensor network for
+collaborative improvement in mission science return.  This concept adds
+collaboration to "adaptive remote sensing" and feedback to traditional
+inter-satellite "communication".
+
+\begin{itemize}
 \item Example references of how it has been applied
 
 \item Insert figure showing flow chart of problem formation and solution using the
@@ -193,10 +246,10 @@ proposed procedure if needed
 \end{itemize}
 
 \subsection*{Fig. 1. Proposed cognitive communcaitons flow chart.}
-\label{sec:org570f9f3}
+\label{sec:org90f0529}
 
 \section*{IV. GENERATION OF TRAINING DATA OF COLLABORATIVE SATELLITE CONSTELLATIONS}
-\label{sec:org1beb0a1}
+\label{sec:org6e9610b}
 
 \begin{itemize}
 \item To train the neural network, it is necessary to generate large training
@@ -275,10 +328,6 @@ truth data parameters, or to promote sensor hardware reconfiguration.
 \includegraphics[width=0.6\textwidth]{./images/loop.pdf}
 \end{center}
 
-\begin{center}
-\includegraphics[width=0.6\textwidth]{./images/regression.png}
-\end{center}
-
 \begin{itemize}
 \item Key is that it can output large sets of collaborative and adatpive simulation
 results.
@@ -311,27 +360,35 @@ make good decisions
 \end{itemize}
 
 \section*{V. EXAMPLE CASE STUDIES}
-\label{sec:orgf49f226}
+\label{sec:orgdbcb83d}
 
 Description of examples and why they were chosen.
 
-\subsection*{A. Example 1}
-\label{sec:org09f60a0}
+\subsection*{A. Example 1: Cognitive Communication for Deployed Algorithms}
+\label{sec:orgb4fc8a4}
 
-\ldots{}
 
-\subsection*{B. Example 2}
-\label{sec:org00fe754}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{./images/loop.pdf}
+\end{center}
 
-\ldots{}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{./images/regression.png}
+\end{center}
+
+
+\subsection*{B. Example 2:}
+\label{sec:org304432c}
+
+Something
 
 \section*{VI. SUMMARY AND NEXT STEPS}
-\label{sec:orgb32679a}
+\label{sec:org36ac305}
 
 \ldots{}
 
 \section*{REFERENCES}
-\label{sec:orgc00bb67}
+\label{sec:orgf848537}
 
 \ldots{}
 \end{document}
