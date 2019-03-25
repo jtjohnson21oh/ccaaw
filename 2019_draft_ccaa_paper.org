@@ -3,15 +3,15 @@
 
 Future Earth-observing systems will involve distributed missions of autonomous
 and heterogeneous spaceborne sensor networks.  Future sensor webs will occupy a
-more complex decision space but will be capable of adaptive decisions and
+more complex decision space and will be capable of adaptive decisions and
 collaborative networking.  These capabilities must be utilized to increase a
 network's operational value and to reduce human involvement in high-level
 communications decisions.  Developing this technology may be greatly accelerated
 by machine learning techniques and cognitive communications algorithms.  The
 following research describes the development and analysis of simulated
-observing-systems which employ a cognitive communications model, and concludes
-with an analysis of simulation results, their implications, and potential for
-extension or improvement.
+observing-systems which employ a cognitive communications model.  Results from
+these simulations provide training data for machine learning models to explore
+the new decision space.
 
 * I. INTRODUCTION
 
