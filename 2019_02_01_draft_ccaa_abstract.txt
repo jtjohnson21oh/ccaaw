@@ -1,0 +1,53 @@
+Event:
+2019 IEEE CCAA Worshop
+
+Title:
+Using Cognitive Communications to Increase the Operational Value of
+Collaborative Networks of Satellites
+
+Authors:
+Ryan Linnabary,
+Graeme E. Smith,
+Andrew O'Brien,
+Christopher Ball,
+Joel T. Johnson
+
+Submission ID:
+1
+
+Topic(s):
+- Machine learning methods for self-reconfiguration and autonomous performance
+  optimization
+- Cognitive network design and protocols
+- Modeling, analysis, and simulation of cognitive radio technologies and
+  networks
+
+Abstract:
+It is envisioned that NASA's future space systems will be composed of large,
+inhomogeneous collaborative networks of small autonomous satellite
+platforms. Unfortunately, current and near-future inter-satellite communications
+are highly constrained in terms of link availability, reliability, power, and
+bandwidth. Although future technologies may mitigate these communication
+constraints, instruments will also rapidly expand in data volume and employ
+adaptive sensor reconfiguration. Adaptive sensor platforms must make intelligent
+decisions based on a model informed by the entire network. This feature
+introduces a complex decision space concerning the content and flow of
+information.
+
+Cognitive space communication algorithms have been proposed to address such
+complexity. Typical algorithms address low-level communication parameters
+regarding modulation, power, bandwidth, and error rate. A need still exists for
+collaborative algorithms which apply primarily to network operation, with
+decisions influenced by communication link constrains. A cognitive approach
+could also offer a solution to collaborative communications and adaptive remote
+sensing.
+
+Under the NASA Advanced Information System Technology program we are developing
+an open-source C++ library for the simulation of autonomous collaborative
+networks of adaptive sensors. It enables efficient network simulation with
+realistic constraints in communication, power, and measurements. In this work,
+we investigate how our simulation tools could produce large training data sets
+that capture the operation of the described networks. We then investigate how
+machine learning could utilize these data sets to train neural networks to make
+intelligent collaborative decisions. Results and a discussion of application to
+future cognitive space communication will be discussed.
