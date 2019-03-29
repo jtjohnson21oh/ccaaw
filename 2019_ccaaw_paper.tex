@@ -1,21 +1,24 @@
 %% =============================== PREAMBLE ====================================
 
 \documentclass[conference]{IEEEtran}
+
+\usepackage{cite,amsmath,amssymb,amsfonts,algorithmic,graphicx,textcomp,xcolor,
+  etoolbox}
+
 \pdfminorversion=7
 \pdfsuppresswarningpagegroup=1
 \IEEEoverridecommandlockouts
-\usepackage{cite,amsmath,amssymb,amsfonts,algorithmic,graphicx,textcomp,xcolor,
-  etoolbox}
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\newcommand{\project}{{\sc{Collaborate}}~}
+\newcommand{\cpp}{C\texttt{++}~}
 \newcommand{\thisplace}{\textit{Department of Electrical}\\
   \textit{and Computer Engineering}\\
   \textit{The Ohio State University}\\
   Columbus OH, USA\\
 }
-\newcommand{\project}{{\sc{Collaborate}}~}
-\newcommand{\cpp}{C\texttt{++}~}
 
 \title{Using Cognitive Communications to Increase the Operational Value of
   Collaborative Networks of Satellites}
@@ -32,15 +35,13 @@
   \and
   \IEEEauthorblockN{Christopher Ball}
   \IEEEauthorblockA{\thisplace ball.51@osu.edu}
-  \and {~} \and {~~~~~~~~~~~~~~~~}
-  \and
+  \and {~} \and {~~~~~~~~~~~~~~~~} \and
   \IEEEauthorblockN{Joel T. Johnson}
   \IEEEauthorblockA{\thisplace johnson.1374@osu.edu}
   \and {~~~~~~} \and {~~~~~~}
 }
 
 %% =============================== DOCUMENT ====================================
-
 
 \begin{document}
 
@@ -60,26 +61,31 @@
   \end{minipage}
 }
 
+%% =============================== ABSTRACT ====================================
+
 \begin{abstract}
   Future Earth-observing systems will involve distributed missions of autonomous
 and heterogeneous spaceborne sensor networks.  New systems will occupy a more
 complex decision space and will be capable of adaptive decisions and
 collaborative networking.  These capabilities must be utilized to increase a
-network's operational value and to reduce human involvement in high-level
-communications decisions.  Developing the required technology for both ground
-operations and space deployment may be greatly accelerated by machine learning
-techniques and cognitive communications algorithms.  The following research
-describes the development and analysis of simulated sensor networks which employ
-a cognitive communications model.  Results from these simulations provide
-training data for machine learning models which are used to explore the expanded
-decision space.
+network's operational value and to optimize autonomous high-level communications
+decisions.  Developing the required technology for both ground operations and
+space deployment may be greatly accelerated by machine learning techniques and
+cognitive communications algorithms.  The following research describes the
+development and analysis of simulated sensor networks which employ a cognitive
+communications model.  Results from these simulations provide training data for
+machine learning models which are used to explore the expanded decision space.
 \end{abstract}
 
 \begin{IEEEkeywords}
   Autonomy, Sensor Network, Software, Remote Sensing, OSSE
 \end{IEEEkeywords}
 
+%% ============================= INTRODUCTION ==================================
+
 \section{Introduction}
+\label{sec:intro}
+
 It is envisioned that NASA's future space systems will be composed of large,
 inhomogeneous networks of small satellites and autonomous platforms.  These
 resource constrained systems, carrying an array of different instruments, will
@@ -127,7 +133,10 @@ when and what to communicate.  Results from our investigation will be presented,
 and the applicability of these methods to future cognitive space communication
 will be discussed.
 
+%% =============================== OVERVIEW ====================================
+
 \section{Overview Of Collaborative Networks Of Adaptive Sensors}
+\label{sec:overview}
 
 {\color{red}
   - Standard stuff from the AIST proposal and IGARSS papers
@@ -135,7 +144,10 @@ will be discussed.
 
 \vspace{180pt}
 
+%% ========================= HIGH-LEVEL COGNITION ==============================
+
 \section{Cognition and High-Level Communications}
+\label{sec:hlc}
 
 {\color{red}
   - What it means for low-level and high-level communications
@@ -159,25 +171,24 @@ autonomously with or without supervision, and often require significant
 quantities of training data and careful adjustment of model parameters.  These
 techniques are useful for the problems which: require many manual adjustments or
 long lists of rules; operate in a fluctuating environment; need to process a
-large amount of data; and/or have no known ``good'' solution.
+large amount of data; or have no known optimal solution.
 
 Machine learning techniques are currently being applied in the development of
-scheduling algorithms, sensor network design, and other applicable areas.  An
-opportunity exists to use machine learning algorithms to optimize the flow of
-information within a collaborative network of satellites.  Optimization will
-increase communications efficiency by increasing the value of data contents and
-reducing power consumption.
+adaptive hardware, resource optimization, and other areas of sensor network
+design.  An opportunity exists to use machine learning to optimize information
+flow within a collaborative network of satellites.  Improvements would increase
+communications efficiency by increasing the value of data contents and reducing
+operational resource consumption.
 
 All of the common machine learning algorithms apply to optimization of
 high-level communication parameters.  Regression tasks enable satellites to
 autonomously adjust parameters for communication, sensing, and on-board data
 processing.  Classification of network nodes based on proximity and capabilities
-could increase efficiency in communications decisions.
-
-This research involves the application of existing machine learning tools as
-well as the implementation of new machine learning algorithms.  A group of
-third-party Python packages is used, including SkikitLearn and Tensorflow.  The
-custom algorithms discussed are written in \cpp.
+could increase efficiency by informing antenna direction or temporal scheduling.
+This research involves the application of new and existing machine learning
+algorithms.  Existing algorithms are widely available as third-party Python
+modules, and will be discussed later in Section~\ref{sec:software}.  Custom
+algorithms are developed for the \cpp library.
 
 \begin{table}[t]
   \caption{Low vs. high level communication issues}
@@ -203,22 +214,21 @@ custom algorithms discussed are written in \cpp.
       Power & \\
       \hline
     \end{tabular}
-    \label{tab:commlevels}
+    \label{tab:comms}
   \end{center}
 \end{table}
 
 \subsection{Cognitive Communications}
+\label{ssec:cognit}
 
 A cognitive entity is capable of taking action based on its goals and perception
 of the environment, potentially learning from the result of its action.  It is
 an intelligent entity which posesses perception, learning, reasoning, and making
-decisions.
-
-In the current context, cognitive communication involves the intelligent routing
-of information within an autonomous satellite sensor network for collaborative
-improvement in mission science return.  This concept adds collaboration to
-``adaptive remote sensing'' and feedback to traditional inter-satellite
-``communication''.
+decisions.  In the current context, cognitive communication involves the
+intelligent routing of information within an autonomous satellite sensor network
+for collaborative improvement in mission science return.  This concept adds
+collaboration to ``adaptive remote sensing'' and feedback to traditional
+inter-satellite ``communication''.
 
 {
   \color{red}
@@ -235,7 +245,10 @@ improvement in mission science return.  This concept adds collaboration to
 }
 \vfill
 
+%% =============================== SOFTWARE ====================================
+
 \section{Sensor Network Simulations to Support Machine Learning Research}
+\label{sec:software}
 
 Research in applying machine learning to sensor networks will rely on
 simulations to validate algorithms both deployed on spacecraft and on the
@@ -282,7 +295,7 @@ and ``C'' to queue ``D'' for a measurement with a different sensor (red line).
 Significant work has been done to optimize this algorithm, because it is the
 main consumer of CPU time and is run regularly in simulation to find routes.  It
 is also the foundation for deployed cognitive communications, as discussed in
-Section [{\color{red}TODO}].
+Section~\ref{sec:examples}.
 
 Presently, the included algorithms are iterative and often take minutes to
 conclude.  It may be possible to reduce run-time or optimize routes based on
@@ -313,7 +326,8 @@ in standard formats for post-processing.
   \begin{minipage}[b]{\linewidth}
     \begin{center}
       \includegraphics[width=\textwidth]{images/prim.pdf}
-      {\footnotesize(e) Network graph structure (minimum spanning tree)}
+      {\footnotesize(e) Instantaneous network graph structure (minimum spanning
+        tree)}
     \end{center}
     \medskip
   \end{minipage}
@@ -398,17 +412,17 @@ operation.
   \begin{minipage}[b]{0.49\linewidth}
     \begin{center}
       \includegraphics[width=\textwidth]{images/unweighted_plot.pdf} \\
-      {\footnotesize(a) Line-of-sight connections}
+      {\footnotesize(b) Line-of-sight connections}
     \end{center}
   \end{minipage}
   \begin{minipage}[b]{0.49\linewidth}
     \begin{center}
       \includegraphics[width=\textwidth]{images/weighted_plot.pdf} \\
-      {\footnotesize(b) Channel RF gain}
+      {\footnotesize(c) Channel RF gain}
     \end{center}
   \end{minipage}
   \caption{Visualized simulation data}
-  \label{fig:postprocess}
+  \label{fig:processing}
 \end{figure}
 
 Another visualization involves network structure.  Fig.3(b) and (c) contain
@@ -416,62 +430,105 @@ plots of unweighted and weighted adjacency matrices.  A built-in Python library
 called NetworkX produced these graphs and works well with the adjacency matrix
 format.
 
-
-
-
 \vspace{80pt}
-
-Example plots.
-
-\vspace{80pt}
-
-Example plots.
-
-\vspace{80pt}
-
-Example plots.
-
-\vspace{80pt}
-
-\section{Example Case Studies}
-
-Description of examples and why they were chosen.
-
-\subsection{Example 1: Cognitive Feedback For Deployed Regression Algorithm}
-
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=0.45\textwidth]{images/loop.pdf}}
-  \caption{Various constellations defined by orbit patterns}
-  \label{fig:loop}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=0.45\textwidth]{images/regression.png}}
-  \caption{Various constellations defined by orbit patterns}
-  \label{fig:regression}
-\end{figure}
-
-\subsection{Example 2: Spectral Clustering Using Simulated Network Data}
-
-Something
-
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=0.45\textwidth]{images/clusters.pdf}}
-  \caption{Various constellations defined by orbit patterns}
-  \label{fig:clusters}
-\end{figure}
-
-\section{SUMMARY AND NEXT STEPS}
 
 ...
 
+\vspace{80pt}
+
+...
+
+\vspace{80pt}
+
+%% =============================== EXAMPLES ====================================
+
+\section{Example Case Studies}
+\label{sec:examples}
+
+The following examples demonstrate cognitive communications and machine learning
+techniques applied to software simulations.  First, parametric regression is
+automated using the \project network feedback algorithm.  This simulates machine
+learning in a realistic observing system.  Second, satellites are classified
+based on line-of-sight proximity.  This demonstrates the utility of \project
+simulation data for training external machine learning models.
+
+\subsection{Cognitive Feedback For Autonomous Regression Algorithm}
+\label{ssec:feedback}
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+\begin{figure}[b!]
+  \begin{minipage}[b]{\linewidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{images/loop.pdf}
+      {\footnotesize(a) Feedback route}
+    \end{center}
+    \medskip
+  \end{minipage}
+  \begin{minipage}[b]{\linewidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{images/regression.pdf}
+      {\footnotesize(b) Autonomous parametric regression for data correlation
+        threshold}
+    \end{center}
+  \end{minipage}
+  \caption{Cognitive communications feedback}
+  \label{fig:feedback}
+\end{figure}
+
+\subsection{Spectral Clustering Using Simulated Network Data}
+\label{ssec:cluster}
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+\begin{figure}[b!]
+  \centerline{\includegraphics[width=\linewidth]{images/clusters.pdf}}
+  \caption{Spectral clustering by k-means classification}
+  \label{fig:clusters}
+\end{figure}
+
+%% ================================ SUMMARY ====================================
+
+\section{Summary And Next Steps}
+\label{sec:summary}
+
+...
+
+%% =============================== REFERENCES ==================================
+
 \section{References}
+\label{sec:ref}
 
 ...
 
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.19)  27 MAR 2019 17:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.19)  29 MAR 2019 12:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**ccaaw_paper.tex
-(./ccaaw_paper.tex
+**2019_ccaaw_paper.tex
+(./2019_ccaaw_paper.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (./IEEEtran.cls
@@ -114,9 +114,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-)
-** ATTENTION: Overriding command lockouts (line 6).
-(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
@@ -329,27 +327,29 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count110
 )
-(./ccaaw_paper.aux)
-\openout1 = `ccaaw_paper.aux'.
+** ATTENTION: Overriding command lockouts (line 10).
+(./2019_ccaaw_paper.aux)
+\openout1 = `2019_ccaaw_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 45.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 46.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    ... okay on input line 46.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -421,24 +421,24 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 112.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 118.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 129.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 135.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 129.
+LaTeX Font Info:    Try loading font information for U+msa on input line 135.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 129.
+LaTeX Font Info:    Try loading font information for U+msb on input line 135.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -449,42 +449,42 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <images/constellations.pdf, id=14, 448.07399pt x 245.57347pt>
 File: images/constellations.pdf Graphic file (type pdf)
 <use images/constellations.pdf>
-Package pdftex.def Info: images/constellations.pdf  used on input line 297.
+Package pdftex.def Info: images/constellations.pdf  used on input line 310.
 (pdftex.def)             Requested size: 252.0pt x 138.11224pt.
 <images/remote_sensing.pdf, id=15, 859.76701pt x 236.70834pt>
 File: images/remote_sensing.pdf Graphic file (type pdf)
 <use images/remote_sensing.pdf>
-Package pdftex.def Info: images/remote_sensing.pdf  used on input line 304.
+Package pdftex.def Info: images/remote_sensing.pdf  used on input line 317.
 (pdftex.def)             Requested size: 252.0pt x 69.38048pt.
 <images/prim.pdf, id=16, 490.7133pt x 245.57347pt>
 File: images/prim.pdf Graphic file (type pdf)
 <use images/prim.pdf>
-Package pdftex.def Info: images/prim.pdf  used on input line 315.
+Package pdftex.def Info: images/prim.pdf  used on input line 328.
 (pdftex.def)             Requested size: 252.0pt x 126.11014pt.
 <images/collaborate.pdf, id=17, 448.07399pt x 245.57347pt>
 File: images/collaborate.pdf Graphic file (type pdf)
 <use images/collaborate.pdf>
-Package pdftex.def Info: images/collaborate.pdf  used on input line 322.
+Package pdftex.def Info: images/collaborate.pdf  used on input line 336.
 (pdftex.def)             Requested size: 252.0pt x 138.11224pt.
 <images/params.pdf, id=18, 201.94847pt x 216.54802pt>
 File: images/params.pdf Graphic file (type pdf)
 <use images/params.pdf>
-Package pdftex.def Info: images/params.pdf  used on input line 333.
+Package pdftex.def Info: images/params.pdf  used on input line 347.
 (pdftex.def)             Requested size: 123.48138pt x 132.40799pt.
 <images/weighted.pdf, id=19, 201.94847pt x 216.54802pt>
 File: images/weighted.pdf Graphic file (type pdf)
 <use images/weighted.pdf>
-Package pdftex.def Info: images/weighted.pdf  used on input line 339.
+Package pdftex.def Info: images/weighted.pdf  used on input line 353.
 (pdftex.def)             Requested size: 123.48138pt x 132.40799pt.
 <images/meas2.pdf, id=20, 201.94847pt x 182.6273pt>
 File: images/meas2.pdf Graphic file (type pdf)
 <use images/meas2.pdf>
-Package pdftex.def Info: images/meas2.pdf  used on input line 346.
+Package pdftex.def Info: images/meas2.pdf  used on input line 360.
 (pdftex.def)             Requested size: 123.48138pt x 111.6672pt.
 <images/comm.pdf, id=21, 201.94847pt x 182.6273pt>
 File: images/comm.pdf Graphic file (type pdf)
 <use images/comm.pdf>
-Package pdftex.def Info: images/comm.pdf  used on input line 352.
+Package pdftex.def Info: images/comm.pdf  used on input line 366.
 (pdftex.def)             Requested size: 123.48138pt x 111.6672pt.
 
 Underfull \vbox (badness 2469) has occurred while \output is active []
@@ -494,17 +494,17 @@ pdf> <./images/collaborate.pdf>]
 <images/param_plot.pdf, id=8769, 314.8082pt x 290.33252pt>
 File: images/param_plot.pdf Graphic file (type pdf)
 <use images/param_plot.pdf>
-Package pdftex.def Info: images/param_plot.pdf  used on input line 393.
+Package pdftex.def Info: images/param_plot.pdf  used on input line 407.
 (pdftex.def)             Requested size: 176.39923pt x 162.68698pt.
 <images/unweighted_plot.pdf, id=8770, 939.51pt x 939.51pt>
 File: images/unweighted_plot.pdf Graphic file (type pdf)
 <use images/unweighted_plot.pdf>
-Package pdftex.def Info: images/unweighted_plot.pdf  used on input line 400.
+Package pdftex.def Info: images/unweighted_plot.pdf  used on input line 414.
 (pdftex.def)             Requested size: 123.48138pt x 123.4738pt.
 <images/weighted_plot.pdf, id=8771, 180.675pt x 180.675pt>
 File: images/weighted_plot.pdf Graphic file (type pdf)
 <use images/weighted_plot.pdf>
-Package pdftex.def Info: images/weighted_plot.pdf  used on input line 406.
+Package pdftex.def Info: images/weighted_plot.pdf  used on input line 420.
 (pdftex.def)             Requested size: 123.48138pt x 123.48317pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -515,18 +515,18 @@ weighted_plot.pdf>]
 <images/loop.pdf, id=8898, 448.07399pt x 245.57347pt>
 File: images/loop.pdf Graphic file (type pdf)
 <use images/loop.pdf>
-Package pdftex.def Info: images/loop.pdf  used on input line 443.
-(pdftex.def)             Requested size: 232.19843pt x 127.26051pt.
-<images/regression.png, id=8899, 361.35pt x 216.81pt>
-File: images/regression.png Graphic file (type png)
-<use images/regression.png>
-Package pdftex.def Info: images/regression.png  used on input line 449.
-(pdftex.def)             Requested size: 232.19843pt x 139.32031pt.
-<images/clusters.pdf, id=8901, 490.7133pt x 245.57347pt>
+Package pdftex.def Info: images/loop.pdf  used on input line 483.
+(pdftex.def)             Requested size: 252.0pt x 138.11224pt.
+<images/regression.pdf, id=8899, 433.62pt x 289.08pt>
+File: images/regression.pdf Graphic file (type pdf)
+<use images/regression.pdf>
+Package pdftex.def Info: images/regression.pdf  used on input line 490.
+(pdftex.def)             Requested size: 252.0pt x 168.00174pt.
+<images/clusters.pdf, id=8900, 490.7133pt x 245.57347pt>
 File: images/clusters.pdf Graphic file (type pdf)
 <use images/clusters.pdf>
-Package pdftex.def Info: images/clusters.pdf  used on input line 459.
-(pdftex.def)             Requested size: 232.19843pt x 116.20268pt.
+Package pdftex.def Info: images/clusters.pdf  used on input line 515.
+(pdftex.def)             Requested size: 252.0pt x 126.11014pt.
 
 
 ** Conference Paper **
@@ -539,29 +539,29 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5 <./images/loop.pdf> <./images/regression.png> <./images/clusters.pdf>]
-(./ccaaw_paper.aux) ) 
+[5 <./images/loop.pdf> <./images/regression.pdf> <./images/clusters.pdf>]
+(./2019_ccaaw_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 4777 strings out of 492982
- 69198 string characters out of 6134896
- 139207 words of memory out of 5000000
- 8253 multiletter control sequences out of 15000+600000
+ 4785 strings out of 492982
+ 69371 string characters out of 6134896
+ 139309 words of memory out of 5000000
+ 8262 multiletter control sequences out of 15000+600000
  40412 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,35p,821b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ccaaw_paper.pdf (5 pages, 2409407 bytes).
+ 41i,8n,35p,781b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on 2019_ccaaw_paper.pdf (5 pages, 1975780 bytes).
 PDF statistics:
- 8967 PDF objects out of 10688 (max. 8388607)
- 5893 compressed objects within 59 object streams
+ 9005 PDF objects out of 10688 (max. 8388607)
+ 5896 compressed objects within 59 object streams
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
