@@ -70,21 +70,11 @@
 %% =============================== ABSTRACT ====================================
 
 \begin{abstract}
-  Future Earth-observing systems will involve distributed missions of autonomous
-and heterogeneous spaceborne sensor networks.  New systems will occupy a more
-complex decision space and will be capable of adaptive decisions and
-collaborative networking.  These capabilities must be utilized to increase a
-network's operational value and to optimize autonomous high-level communications
-decisions.  Developing the required technology for both ground operations and
-space deployment may be greatly accelerated by machine learning techniques and
-cognitive communications algorithms.  The following research describes the
-development and analysis of simulated sensor networks which employ a cognitive
-communications model.  Results from these simulations provide training data for
-machine learning models which are used to explore the expanded decision space.
+Distributed satellite constellations utilizing networks of small satellites will be a key enabler of new observing strategies in the next generation of NASA missions.  While it is quickly becoming feasible to establish communication networks among small satellites, a key question is how these networks can be best utilized to achieve objectives.  While small satellite instruments are becoming more capable, they are still resource constrained (i.e. power, data, scanning systems, etc.); therefore, adaptive instruments that intelligently adjust parameters on the fly are key for increasing operational value within these constraints.  In this context, the purpose of collaborative communication among small satellites is to achieve system-level adaptivity.  This dramatically increases the complexity of the control algorithms and decision space in which the small satellites communication networks must operate.  We postulate that cognition in the high-level collaborative communication is one approach to both achieve autonomy and to address this complex control space.  In this paper, we investigate concepts for how machine learning (ML) algorithms can be utilized in the high-level decision making of a communication system in a distributed satellite mission.  This paper will show cognitive communication model with ML and some example case study results.
 \end{abstract}
 
 \begin{IEEEkeywords}
-  Autonomy, Sensor Network, Software, Remote Sensing, OSSE
+Distributed Satellite Missions, Autonomous Systems, Sensor Network, Sensor Web, OSSE
 \end{IEEEkeywords}
 
 %% ============================= INTRODUCTION ==================================
@@ -144,6 +134,24 @@ will be discussed.
 \section{Overview Of Collaborative Networks Of Adaptive Sensors}
 \label{sec:overview}
 
+%
+%?	Satellite sensor constellations are now feasible
+%?	Current constellations are managed in simple ways with ground contacts
+%?	Future constellations operate more autonomously with communicaitons
+%
+%
+%?	satellites will carry adaptive sensors.  
+%?	Require ability to make decisions about how to adjust sensor parameters based on own measurements
+%?	more complex to adjust parameters based on entire constelations
+%
+%
+%?	Collaboration between satellites enables full utilization of adaptivity
+%?	represents the highest complexity of sensor network
+%?	low TRL.  Difficult to grasp due to complexitu
+%?	decision making, reacting to environment and very large space of information
+%?	Can cognition be applied here? 
+
+
 The remote sensing community anticipates significant demand for simulation tools
 as low earth orbit (LEO) small satellites become a common platform for observing
 system missions.  This research team has been tasked with developing simulation
@@ -168,6 +176,11 @@ and machine learning.
 
 \section{Cognition and High-Level Communications}
 \label{sec:hlc}
+
+%"Cognition" refers to the act of selecting and carrying out actions based on both specific goals and perception of an external environment.  Cognition also includes learning from past experiences and interactions with the environment.  Thus, a "cognitive entity" has intelligence, as defined by possessing: perception, learning/reasoning and decision making [x]. "Cognitive Communications" are communications that are in some way dependent on cognition from a cognitive entity.  
+%
+%Example references of how it has been applied
+
 
 {\color{red}
   - What it means for low-level and high-level communications
