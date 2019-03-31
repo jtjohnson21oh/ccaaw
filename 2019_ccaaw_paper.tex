@@ -100,7 +100,7 @@ Distributed Satellite Missions, Autonomous Systems, Sensor Network, Sensor Web, 
 \label{sec:intro}
 
 It is envisioned that NASA's future space systems will be composed of large,
-inhomogeneous networks of small satellites and autonomous platforms.  These
+inhomogeneous networks of small satellites and autonomous platforms \cite{ref1}.  These
 resource constrained systems, carrying an array of different instruments, will
 be expected to operate autonomously and collaboratively to achieve mission and
 science goals.  Unfortunately, current and near-future inter-satellite
@@ -108,7 +108,7 @@ communications are highly constrained in terms of link availability,
 reliability, power and bandwidth.  Although future technologies (such as free
 space optical links) may alleviate some constraints, it is expected that future
 instruments will rapidly expand in both data volume and sensor
-reconfigurability.  In this way, it is not sufficient to simply increase the
+reconfigurability \cite{ref2}.  In this way, it is not sufficient to simply increase the
 capabilities of the communication links.  Rather, it is also necessary to
 improve the complex decision making that communication systems perform, such as
 deciding when to transmit, what information is valuable to nodes of the network,
@@ -116,9 +116,9 @@ and how to adapt local operations following the reception of new information.
 
 Recently, cognitive space communication algorithms have been proposed as a
 solution to address the complexity of future inter-satellite communication
-systems.  Typically, these cognitive algorithms have tried to address
+systems \cite{ref3}.  Typically, these cognitive algorithms have tried to address
 communications at a low level and include decision making regarding modulation,
-power and bandwidth, and error rate.  However, it is reasonable to expect that
+power and bandwidth, and error rate \cite{ref4,ref5}.  However, it is reasonable to expect that
 cognition may also offer an improvement in the complex, higher level decisions
 of communication in the context of mission and science objectives.  At this
 level, cognition is applied to the operation of the network with the decision
@@ -129,7 +129,7 @@ In this work, we show results of simulation studies to explore the advantages
 that cognition could offer for collaborative small-satellite networks.  Under a
 NASA Advanced Information System Technology program, we are currently developing
 an open-source \cpp library for the simulation of autonomous and collaborative
-networks of adaptive sensors.  This library and accompanying utilities allow for
+networks of adaptive sensors \cite{ref6}.  This library and accompanying utilities allow for
 the efficient simulation of networks of satellites with realistic constraints in
 communication, power, and measurements.  A key focus of this software is the
 simulation of sensors that operate adaptively.  Adaptive sensors must make
@@ -151,23 +151,7 @@ will be discussed.
 \section{Collaborative Networks Of Adaptive Sensors}
 \label{sec:overview}
 
-%
-%?	Satellite sensor constellations are now feasible
-%?	Current constellations are managed in simple ways with ground contacts
-%?	Future constellations operate more autonomously with communicaitons
-%
-%
-%?	satellites will carry adaptive sensors.  
-%?	Require ability to make decisions about how to adjust sensor parameters based on own measurements
-%?	more complex to adjust parameters based on entire constelations
-%
-%
-%?	Collaboration between satellites enables full utilization of adaptivity
-%?	represents the highest complexity of sensor network
-%?	low TRL.  Difficult to grasp due to complexitu
-%?	decision making, reacting to environment and very large space of information
-%?	Can cognition be applied here? 
-
+{ \color{red}  Satellite sensor constellations are now feasible.  Current constellations are managed in simple ways with ground contacts.  Future constellations operate more autonomously with inter-sat communicaitons}
 
 The remote sensing community anticipates significant demand for simulation tools
 as low earth orbit (LEO) small satellites become a common platform for observing
@@ -178,6 +162,8 @@ resource management, adaptive sensor hardware, and collaborative networking.
 These components may be combined to produce high-fidelity simulations for
 validating adaptive sensor designs.
 
+{ \color{red}   Satellites will carry adaptive sensors.  Require ability to make decisions about how to adjust sensor parameters based on own measurements.  more complex to adjust parameters based on entire constelations}
+
 Adaptive sensor networks work together in the following way: a sensor obtains a
 measurement, quantifies the measurement's science value and system resource
 cost, predicts the network state and data model, and shares this information
@@ -186,30 +172,22 @@ in response to this new information.  The development process has revealed
 opportunities for expansion and improvement involving cognitive communication
 and machine learning.
 
-% Figure~\ref{fig:model} is a model for the simulation tools.
-
+{ \color{red}  Collaboration between satellites enables full utilization of adaptivity.  represents the highest complexity of sensor network.  low TRL.  Difficult to grasp due to complexity.  decision making, reacting to environment and very large space of information.  Can cognition be applied here? }
 
 %% ========================= HIGH-LEVEL COGNITION ==============================
 
-\section{Cognition and High-Level Communications}
-\label{sec:hlc}
+\section{Cognition and High-Level Communications} \label{sec:hlc}
 
-%"Cognition" refers to the act of selecting and carrying out actions based on both specific goals and perception of an external environment.  Cognition also includes learning from past experiences and interactions with the environment.  Thus, a "cognitive entity" has intelligence, as defined by possessing: perception, learning/reasoning and decision making [x]. "Cognitive Communications" are communications that are in some way dependent on cognition from a cognitive entity.  
-%
-%Example references of how it has been applied
+\subsection{Cognitive Communications}
+\label{ssec:cognit}
+Since many interpretations exist, we begin with defining what is meant by Cognitive Communications.  \textit{Cognition} refers to the act of selecting and carrying out actions based on both specific goals and perception of an external environment.  Cognition necessarily includes learning from past experiences and interactions with the environment.  Thus, a \textit{cognitive entity} is capable of taking action based on its goals and perception of the environment, potentially learning from the result of its action.  It is an intelligent entity that posesses perception, learning, reasoning, and making decisions \cite{x}. \textit{Cognitive Communications} are communications whose operations are in some way dependent on cognition.    
 
+Thus far, research into cognitive communication for satellite systems has been predominantly focuses on low-level communication aspects.  {\color{red} (Insert references and descriptions of conference papers from past CCAA)}.  However, cognition can also be applied to the higher-level aspects of a communication system.  For example, cognition could be applied to the intelligent routing of information within an autonomous satellite sensor network \cite{x}.  Alternatively, this routing could establish a collaborative improvement in mission science return and achieve, in effect, a system level adaptivity in response to events.  Thus, consideration of collaboration to `"adaptive remote sensing'" and feedback are added to traditional inter-satellite communication.
 
-{\color{red}
-  - What it means for low-level and high-level communications
+{\color{red} (Summary of different methods for dealing with this problem. Can ML help?)}
 
-  - Cognitive communications communications
-
-  - What are high-level aspects of comm: when and where to move information
-  given large scale constraints on the network. What are tuning parameters at
-  this high level?
-
-  - Summary of different methods for dealing with this problem. Can ML help?
-}
+\subsection{Machine Learning and Cognitive Communications}
+\label{ssec:ml}
 
 Machine learning provides computers the ability to learn without being
 explicitly programmed.  Such intelligent machines are capable of accurately
@@ -243,35 +221,26 @@ algorithms are developed for the \cpp library.
 %   \label{fig:model}
 % \end{figure}
 
-\begin{table}[t]
-  \caption{Low vs. high level communication issues}
-  \begin{center}
-    \begin{tabular}{|l|l|}
-      \hline
-      \textbf{Low Level} & \textbf{High Level}\\
-      \hline
-      Bandwidth & Scheduling\\
-      \hline
-      Error Rate & Packet Contents\\
-      \hline
-      Latency & Satellite Health\\
-      \hline
-    \end{tabular}
-    \label{tab:comms}
-  \end{center}
-\end{table}
+%\begin{table}[t]
+%  \caption{Low vs. high level communication issues}
+%  \begin{center}
+%    \begin{tabular}{|l|l|}
+%      \hline
+%      \textbf{Low Level} & \textbf{High Level}\\
+%      \hline
+%      Bandwidth & Scheduling\\
+%      \hline
+%      Error Rate & Packet Contents\\
+%      \hline
+%      Latency & Satellite Health\\
+%      \hline
+%    \end{tabular}
+%    \label{tab:comms}
+%  \end{center}
+%\end{table}
 
-\subsection{Cognitive Communications}
-\label{ssec:cognit}
-
-A cognitive entity is capable of taking action based on its goals and perception
-of the environment, potentially learning from the result of its action.  It is
-an intelligent entity which posesses perception, learning, reasoning, and making
-decisions.  In the current context, cognitive communication involves the
-intelligent routing of information within an autonomous satellite sensor network
-for collaborative improvement in mission science return.  This concept adds
-collaboration to ``adaptive remote sensing'' and feedback to traditional
-inter-satellite ``communication''.
+%\subsection{Cognitive Communications}
+%\label{ssec:cognit}
 
 {
   \color{red}
@@ -281,6 +250,7 @@ inter-satellite ``communication''.
   the system. What are input and outputs. What are the steps? List of steps in
   proposed procedure if needed
 }
+
 \begin{figure}[t]
   \centerline{\includegraphics[width=0.9\linewidth]{images/working/flowchart.pdf}}
   \caption{Cognitive Communications Model}
@@ -573,19 +543,19 @@ cloud-sensing satellite's future decisions.
 
 \vspace{80pt}
 
-...
-
-\vspace{80pt}
-
-...
-
-\vspace{80pt}
-
 %% =============================== REFERENCES ==================================
 
-\section{References}
-\label{sec:ref}
+\begin{thebibliography}{9}
+{\small
+\bibitem{ref1} Paper on NASA vision statement for small satellite constellations
+\bibitem{ref2} Paper on data volume issues with small satellties.  Need for onboard processing
+\bibitem{ref3} Paper on overview of cognitive communications for satellites (probably CCAA paper)
+\bibitem{ref4} Paper on low-level of cognitive communications for satellites (probably CCAA paper)
+\bibitem{ref5} Paper on low-level of cognitive communications for satellites (probably CCAA paper)
+\bibitem{ref6} R. Linnabary, IGARSS paper reference
 
-...
+\bibitem{refx} G. E. Smith, A. E. Mitchell, C. D. Ball, A. O'Brien, and J. T. Johnson, ``Fully adaptive remote sensing observing system simulation experiments'', in {\it Proceedings of the IEEE International Geoscience and Remote Sensing Symposium (IGARSS)}, July 2018, pp. 5839-5842.
+}
+\end{thebibliography}
 
 \end{document}

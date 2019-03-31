@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  31 MAR 2019 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  31 MAR 2019 13:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -440,65 +440,71 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
+
+LaTeX Warning: Citation `x' on page 2 undefined on input line 183.
+
+
+LaTeX Warning: Citation `x' on page 2 undefined on input line 185.
+
 <images/working/flowchart.pdf, id=10, 335.36491pt x 245.1278pt>
 File: images/working/flowchart.pdf Graphic file (type pdf)
 
 <use images/working/flowchart.pdf>
-Package pdftex.def Info: images/working/flowchart.pdf used on input line 285.
+Package pdftex.def Info: images/working/flowchart.pdf used on input line 255.
 (pdftex.def)             Requested size: 226.79846pt x 165.77579pt.
  [2]
 <images/constellations.pdf, id=15, 448.07399pt x 245.57347pt>
 File: images/constellations.pdf Graphic file (type pdf)
 
 <use images/constellations.pdf>
-Package pdftex.def Info: images/constellations.pdf used on input line 354.
+Package pdftex.def Info: images/constellations.pdf used on input line 324.
 (pdftex.def)             Requested size: 252.0pt x 138.11224pt.
 
 <images/remote_sensing.pdf, id=16, 859.76701pt x 236.70834pt>
 File: images/remote_sensing.pdf Graphic file (type pdf)
 
 <use images/remote_sensing.pdf>
-Package pdftex.def Info: images/remote_sensing.pdf used on input line 361.
+Package pdftex.def Info: images/remote_sensing.pdf used on input line 331.
 (pdftex.def)             Requested size: 252.0pt x 69.38048pt.
 
 <images/prim.pdf, id=17, 490.7133pt x 245.57347pt>
 File: images/prim.pdf Graphic file (type pdf)
  <use images/prim.pdf>
-Package pdftex.def Info: images/prim.pdf used on input line 372.
+Package pdftex.def Info: images/prim.pdf used on input line 342.
 (pdftex.def)             Requested size: 252.0pt x 126.11014pt.
 
 <images/collaborate.pdf, id=18, 448.07399pt x 245.57347pt>
 File: images/collaborate.pdf Graphic file (type pdf)
 
 <use images/collaborate.pdf>
-Package pdftex.def Info: images/collaborate.pdf used on input line 380.
+Package pdftex.def Info: images/collaborate.pdf used on input line 350.
 (pdftex.def)             Requested size: 252.0pt x 138.11224pt.
 
 <images/params.pdf, id=19, 201.94847pt x 216.54802pt>
 File: images/params.pdf Graphic file (type pdf)
  <use images/params.pdf>
-Package pdftex.def Info: images/params.pdf used on input line 391.
+Package pdftex.def Info: images/params.pdf used on input line 361.
 (pdftex.def)             Requested size: 123.48138pt x 132.40799pt.
 
 <images/weighted.pdf, id=20, 201.94847pt x 216.54802pt>
 File: images/weighted.pdf Graphic file (type pdf)
 
 <use images/weighted.pdf>
-Package pdftex.def Info: images/weighted.pdf used on input line 397.
+Package pdftex.def Info: images/weighted.pdf used on input line 367.
 (pdftex.def)             Requested size: 123.48138pt x 132.40799pt.
 
 <images/param_plot.pdf, id=21, 490.7133pt x 361.35pt>
 File: images/param_plot.pdf Graphic file (type pdf)
 
 <use images/param_plot.pdf>
-Package pdftex.def Info: images/param_plot.pdf used on input line 451.
+Package pdftex.def Info: images/param_plot.pdf used on input line 421.
 (pdftex.def)             Requested size: 252.0pt x 185.56525pt.
 
 <images/weighted_plot.pdf, id=22, 180.675pt x 180.675pt>
 File: images/weighted_plot.pdf Graphic file (type pdf)
 
 <use images/weighted_plot.pdf>
-Package pdftex.def Info: images/weighted_plot.pdf used on input line 458.
+Package pdftex.def Info: images/weighted_plot.pdf used on input line 428.
 (pdftex.def)             Requested size: 126.0pt x 126.0002pt.
  [3 <./images/working/flowchart.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -509,21 +515,21 @@ pdf> <./images/collaborate.pdf> <./images/params.pdf> <./images/weighted.pdf> <
 <images/loop.pdf, id=8873, 448.07399pt x 245.57347pt>
 File: images/loop.pdf Graphic file (type pdf)
  <use images/loop.pdf>
-Package pdftex.def Info: images/loop.pdf used on input line 526.
+Package pdftex.def Info: images/loop.pdf used on input line 496.
 (pdftex.def)             Requested size: 252.0pt x 138.11224pt.
 
 <images/regression.pdf, id=8874, 433.62pt x 252.945pt>
 File: images/regression.pdf Graphic file (type pdf)
 
 <use images/regression.pdf>
-Package pdftex.def Info: images/regression.pdf used on input line 533.
+Package pdftex.def Info: images/regression.pdf used on input line 503.
 (pdftex.def)             Requested size: 252.0pt x 147.00153pt.
 
 <images/clusters.pdf, id=8875, 490.7133pt x 245.57347pt>
 File: images/clusters.pdf Graphic file (type pdf)
 
 <use images/clusters.pdf>
-Package pdftex.def Info: images/clusters.pdf used on input line 546.
+Package pdftex.def Info: images/clusters.pdf used on input line 516.
 (pdftex.def)             Requested size: 252.0pt x 126.11014pt.
 
 Underfull \vbox (badness 2229) has occurred while \output is active []
@@ -545,27 +551,31 @@ Before submitting the final camera ready copy, remember to:
 
 [6
 
-] (./2019_ccaaw_paper.aux) ) 
+] (./2019_ccaaw_paper.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4779 strings out of 493089
- 69254 string characters out of 6134842
- 142476 words of memory out of 5000000
- 8181 multiletter control sequences out of 15000+600000
- 40098 words of font info for 82 fonts, out of 8000000 for 9000
+ 4785 strings out of 493089
+ 69275 string characters out of 6134842
+ 142496 words of memory out of 5000000
+ 8186 multiletter control sequences out of 15000+600000
+ 40588 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,35p,1386b,314s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips
-/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ss10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-sbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 2019_ccaaw_paper.pdf (6 pages, 1974930 bytes).
+ 38i,8n,35p,1386b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/ti
+mes/utmri8a.pfb>
+Output written on 2019_ccaaw_paper.pdf (6 pages, 1978271 bytes).
 PDF statistics:
  8984 PDF objects out of 10688 (max. 8388607)
  5855 compressed objects within 59 object streams
