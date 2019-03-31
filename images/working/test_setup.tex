@@ -1,0 +1,95 @@
+\documentclass{standalone}
+\usepackage{amsmath,amsfonts,amssymb, tikz, hyperref, fixltx2e, lscape}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{calc}
+\renewcommand{\familydefault}{\sfdefault}
+\begin{document}
+
+\definecolor{color1}{RGB}{51, 255, 153} % light green
+\definecolor{color2}{RGB}{51, 153, 255} % light blue
+\definecolor{color3}{RGB}{255, 230, 179} % light orange
+\definecolor{color4}{RGB}{255, 153, 153} % light pink
+\definecolor{color5}{RGB}{204, 235, 255} % light blue background
+\definecolor{color6}{RGB}{216, 200, 118} % splitter
+\definecolor{color7}{RGB}{94, 226, 218} % antenna
+\definecolor{color8}{RGB}{241, 5, 182} % ngr
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw,
+    text width=50pt, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw,
+    text centered, minimum height=3em, node distance=1.5cm, inner sep=7pt]
+\tikzstyle{line} = [draw, -latex', thick]
+\tikzstyle{cloud} = [draw, ellipse, node distance=2cm,
+    minimum height=2em]
+\tikzstyle{io} = [draw=black,trapezium, trapezium left angle=70,
+    trapezium right angle=110,text centered]
+
+\hspace{-0.54in}
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node (pc) [block, minimum height=7em, inner sep=12pt, fill=color1] {\bf Host PC};
+    \node (oct) [block,fill=color2, above=4.6cm of pc][xshift=6cm] {Octoclock};
+    \node (usrp2) [block,fill=color3, right=6cm of pc][yshift=3cm] {USRP-2};
+    \node (comb1) [block,fill=color4, right=3cm of usrp2][yshift=2em] {Combiner};
+    \node (usrp1) [block,fill=color3,opacity=1, above of=usrp2] {USRP-1};
+    \node (usrp3) [block,fill=color3, below of=usrp2] {USRP-3};
+    \node (usrp4) [block,fill=color3, below of=usrp3] {USRP-4};
+    \node (usrp5) [block,fill=color3, below of=usrp4] {USRP-5};
+    \node (usrp6) [block,fill=color3, below of=usrp5] {USRP-6};
+    \node (split) [block,fill=color6,opacity=1, right=0.5cm of oct][xshift=4em] {Splitter};
+    \node (ant1) [block,fill=color7,opacity=1, above=1cm of split] {Main Antenna};
+    \node (ant2) [block,fill=color7,opacity=1, above=1cm of oct] {Clock Antenna};
+    \node (comb2) [block,fill=color4, right=3cm of usrp4][yshift=2em] {Combiner};
+    \node (comb3) [block,fill=color4, right=3cm of usrp6][yshift=2em] {Combiner};
+    \node (ngr) [block,fill=color8, minimum height=7em, inner sep=15pt, right=6cm of comb2] {\bf NGR};
+
+    % Draw edges
+    \path [line] [dashed](oct)               |- ([yshift=-0.5em]usrp1.west);
+    \path [line] ([yshift=-0.5em]usrp1.east) -| node[right]{F1} ++(2,0) |- ([yshift=0.5em]comb1.west);
+    \path [line] [dashed](oct)               |- ([yshift=-0.5em]usrp2.west);
+    \path [line] ([yshift=-0.5em]usrp2.east) -| node[right]{F2} ++(2,0) |- ([yshift=-0.5em]comb1.west);
+    \path [line] (comb1)                     -| node[above][xshift=-5em]{Dual-Band CH.1} ++(4.5,0) |- ([yshift=2em]ngr.west);
+    \path [line] ([yshift=-0.5em]usrp3.east) -| node[right]{F3} ++(2,0) |- ([yshift=0.5em]comb2.west);
+    \path [line] [dashed](oct)               |- ([yshift=-0.5em]usrp3.west); %node[above][xshift=-7em]{10MHz-Ref/PPS}
+    \path [line] [dashed](oct)               |- ([yshift=-0.5em]usrp4.west);
+    \path [line] [dashed](oct)               |- ([yshift=-0.5em]usrp5.west);
+    \path [line] [dashed](oct)               |- ([yshift=-0.5em]usrp6.west);
+    \path [line] ([yshift=-0.5em]usrp4.east) -| node[right]{F4} ++(2,0) |- ([yshift=-0.5em]comb2.west);
+    \path [line] ([yshift=-0.5em]usrp5.east) -| node[right]{F5} ++(2,0) |- ([yshift=0.5em]comb3.west);
+    \path [line] ([yshift=-0.5em]usrp6.east) -| node[right]{F6} ++(2,0) |- ([yshift=-0.5em]comb3.west);
+    \path [line] (pc)                        -| ++(3,0) |- ([yshift=0.5em]usrp1.west);
+    \path [line] (pc)                        -| node[above][xshift=-2.5em]{Ethernet} ++(3,0) |- ([yshift=0.5em]usrp2.west);
+    \path [line] (pc)                        -| ++(3,0) |- ([yshift=0.5em]usrp3.west);
+    \path [line] (pc)                        -| ++(3,0) |- ([yshift=0.5em]usrp4.west);
+    \path [line] (pc)                        -| ++(3,0) |- ([yshift=0.5em]usrp5.west);
+    \path [line] (pc)                        -| ++(3,0) |- ([yshift=0.5em]usrp6.west);
+    \path [line] (comb2)                     -| node[above][xshift=-5em]{Dual-Band CH.2} ++(4.5,0) |- (ngr.west);
+    \path [line] (comb3)                     -| node[above][xshift=-5em]{Dual-Band CH.3} ++(4.5,0) |- ([yshift=-2em]ngr.west);
+    \path [line] [dashed](split.south)       |- ([yshift=0.5em]usrp1.east);
+    \path [line] [dashed](split.south)       |- ([yshift=0.5em]usrp2.east);
+    \path [line] [dashed](split.south)       |- ([yshift=0.5em]usrp3.east);
+    \path [line] [dashed](split.south)       |- ([yshift=0.5em]usrp4.east);
+    \path [line] [dashed](split.south)       |- ([yshift=0.5em]usrp5.east);
+    \path [line] [dashed](split.south)       |- ([yshift=0.5em]usrp6.east);
+    \path [line] (ant1.south)                -- (split.north);
+    \path [line] (ant2.south)                -- (oct.north);
+
+    % Draw border
+    %\node (name1) [above of=usrp1] {\bf SDR Array};
+    \begin{pgfonlayer}{background}
+    \draw[thick,dotted,fill=color5,opacity=0.7] ($(usrp1.north west)+(-3,2.3)$) rectangle ($(usrp6.south east)+(9,-0.5)$);
+    \end{pgfonlayer}
+
+    \node (name2) [above=8cm of ngr][xshift=0.5cm] {\bf Next-Gen Receiver};
+    \node (name3) [above=8cm of ngr][xshift=-4.5cm] {\bf Test Hardware};
+    \draw[thick,dotted] ($(ngr)+(-2,10)$) -- ($(ngr)+(-2,-6)$);
+
+    % \draw[thick,dotted]     ($(pc.north west)+(-1,5)$) rectangle ($(ngr.south east)+(1.5,-6)$);
+
+\end{tikzpicture}
+
+
+\end{document}

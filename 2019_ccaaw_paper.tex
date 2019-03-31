@@ -138,11 +138,25 @@ will be discussed.
 \section{Overview Of Collaborative Networks Of Adaptive Sensors}
 \label{sec:overview}
 
-{\color{red}
-  - Standard stuff from the AIST proposal and IGARSS papers
-}
+The remote sensing community anticipates significant demand for simulation tools
+as low earth orbit (LEO) small satellites become a common platform for observing
+system missions.  This research team has been tasked with developing simulation
+tools capable of addressing the challenging problems discussed in
+Section~\ref{sec:intro}.  The proposed solution has three main components:
+resource management, adaptive sensor hardware, and collaborative networking.
+These components may be combined to produce high-fidelity simulations for
+validating adaptive sensor designs.
 
-\vspace{180pt}
+Adaptive sensor networks work together in the following way: a sensor obtains a
+measurement, quantifies the measurement's science value and system resource
+cost, predicts the network state and data model, and shares this information
+with network members.  Network members adapt their behavior or sensor hardware
+in response to this new information.  The development process has revealed
+opportunities for expansion and improvement involving cognitive communication
+and machine learning.
+
+% Figure~\ref{fig:model} is a model for the simulation tools.
+
 
 %% ========================= HIGH-LEVEL COGNITION ==============================
 
@@ -158,11 +172,8 @@ will be discussed.
   given large scale constraints on the network. What are tuning parameters at
   this high level?
 
-  - Table of low level and high level comm issues
-
   - Summary of different methods for dealing with this problem. Can ML help?
 }
-\vspace{80pt}
 
 Machine learning provides computers the ability to learn without being
 explicitly programmed.  Such intelligent machines are capable of accurately
@@ -190,6 +201,12 @@ algorithms.  Existing algorithms are widely available as third-party Python
 modules, and will be discussed later in Section~\ref{sec:software}.  Custom
 algorithms are developed for the \cpp library.
 
+% \begin{figure}[t]
+%   \centerline{\includegraphics[width=0.75\linewidth]{images/flowchart.pdf}}
+%   \caption{Collaborative Model for Adaptive Sensors}
+%   \label{fig:model}
+% \end{figure}
+
 \begin{table}[t]
   \caption{Low vs. high level communication issues}
   \begin{center}
@@ -202,16 +219,6 @@ algorithms are developed for the \cpp library.
       Error Rate & Packet Contents\\
       \hline
       Latency & Satellite Health\\
-      \hline
-      Path Loss & \\
-      \hline
-      Center Frequency & \\
-      \hline
-      Doppler & \\
-      \hline
-      Modulation & \\
-      \hline
-      Power & \\
       \hline
     \end{tabular}
     \label{tab:comms}
@@ -234,15 +241,16 @@ inter-satellite ``communication''.
   \color{red}
   - Example references of how it has been applied
 
-  - Insert figure showing flow chart of problem formation and solution using
-  the ML approach
-
   - Generation of training data, training of the NN, application of the NN to
   the system. What are input and outputs. What are the steps? List of steps in
   proposed procedure if needed
-
-  - Proposed cognitive communcaitons flow chart.
 }
+\begin{figure}[t]
+  \centerline{\includegraphics[width=0.9\linewidth]{images/working/flowchart.pdf}}
+  \caption{Cognitive Communications Model}
+  \label{fig:model}
+\end{figure}
+
 \vfill
 
 %% =============================== SOFTWARE ====================================
@@ -354,19 +362,19 @@ in standard formats for post-processing.
       {\footnotesize(b) Network parameter data}
     \end{center}
   \end{minipage}
-  \newline
-  \begin{minipage}[b]{0.49\linewidth}
-    \begin{center}
-      \includegraphics[width=\textwidth]{images/meas2.pdf}
-      {\footnotesize(c) Satellite measurement data}
-    \end{center}
-  \end{minipage}
-  \begin{minipage}[b]{0.49\linewidth}
-    \begin{center}
-      \includegraphics[width=\textwidth]{images/comm.pdf}
-      {\footnotesize(d) Comm. channel data}
-    \end{center}
-  \end{minipage}
+  % \newline
+  % \begin{minipage}[b]{0.49\linewidth}
+  %   \begin{center}
+  %     \includegraphics[width=\textwidth]{images/meas2.pdf}
+  %     {\footnotesize(c) Satellite measurement data}
+  %   \end{center}
+  % \end{minipage}
+  % \begin{minipage}[b]{0.49\linewidth}
+  %   \begin{center}
+  %     \includegraphics[width=\textwidth]{images/comm.pdf}
+  %     {\footnotesize(d) Comm. channel data}
+  %   \end{center}
+  % \end{minipage}
   \caption{Simulation training data formats}
   \label{fig:data}
 \end{figure}
@@ -409,16 +417,16 @@ operation.
     \end{center}
     \medskip
   \end{minipage}
-  \begin{minipage}[b]{0.49\linewidth}
+  % \begin{minipage}[b]{0.49\linewidth}
+  %   \begin{center}
+  %     \includegraphics[width=\textwidth]{images/unweighted_plot.pdf} \\
+  %     {\footnotesize(b) Line-of-sight connections}
+  %   \end{center}
+  % \end{minipage}
+  \begin{minipage}[b]{\linewidth}
     \begin{center}
-      \includegraphics[width=\textwidth]{images/unweighted_plot.pdf} \\
-      {\footnotesize(b) Line-of-sight connections}
-    \end{center}
-  \end{minipage}
-  \begin{minipage}[b]{0.49\linewidth}
-    \begin{center}
-      \includegraphics[width=\textwidth]{images/weighted_plot.pdf} \\
-      {\footnotesize(c) Channel RF gain}
+      \includegraphics[width=0.5\textwidth]{images/weighted_plot.pdf} \\
+      {\footnotesize(b) Channel RF gain}
     \end{center}
   \end{minipage}
   \caption{Visualized simulation data}
@@ -440,6 +448,10 @@ format.
 
 \vspace{80pt}
 
+...
+
+\vspace{80pt}
+
 %% =============================== EXAMPLES ====================================
 
 \section{Example Case Studies}
@@ -447,37 +459,38 @@ format.
 
 The following examples demonstrate cognitive communications and machine learning
 techniques applied to software simulations.  First, parametric regression is
-automated using the \project network feedback algorithm.  This simulates machine
-learning in a realistic observing system.  Second, satellites are classified
-based on line-of-sight proximity.  This demonstrates the utility of \project
-simulation data for training external machine learning models.
+automated using the \project network feedback algorithm.  This simulates
+deployed machine learning in a realistic observing system.  Second, satellites
+are classified based on line-of-sight proximity.  This demonstrates the utility
+of \project simulation data for training external machine learning models.
 
-\subsection{Cognitive Feedback For Autonomous Regression Algorithm}
+\subsection{Cognitive Feedback For Autonomous Parameter Regression}
 \label{ssec:feedback}
 
-...
+One option for increasing an sensor network's operational value is for its
+members to make informed decisions about what and when to measure, rather than
+using a fixed duty cycle.  Informed decisions would benefit optical imaging
+satellites through cloud avoidance or targeting events.  Also, cloud satellites
+can exploit data cloud depth correlation to inform follow-up precipitation
+measurements.  Section~\ref{sec:software} shows that \project provides a network
+algorithm for predicting optimal routes, such as the one illustrated in
+Fig.1(f).  This can also be used to predict a path for feedback to the original
+satellite.
 
-...
+A single feedback cycle is shown in Fig.4(a).  In this plot, a satellite travels
+from South America over the Atlantic and measures cloud depth over Africa (blue
+line).  Internal processing reveals the presence of clouds which exceed a
+threshold for likely precipitation.  The satellite is able to predict the
+arrival of a precipitation sensor.  A message is forwarded through three other
+satellites across the Pacific which alerts the follow-up satellite of this
+opportunity.  As quickly as possible after the follow-up measurement,
+information is fed back to the original satellite over the Middle East and
+China.  Feedback provides success or failure criteria, improving the
+cloud-sensing satellite's future decisions.
 
-...
 
-...
 
-...
-
-...
-
-...
-
-...
-
-...
-
-...
-
-...
-
-\begin{figure}[b!]
+\begin{figure}[t!]
   \begin{minipage}[b]{\linewidth}
     \begin{center}
       \includegraphics[width=\textwidth]{images/loop.pdf}
@@ -499,30 +512,44 @@ simulation data for training external machine learning models.
 \subsection{Spectral Clustering Using Simulated Network Data}
 \label{ssec:cluster}
 
-...
-
-...
-
-...
-
-...
-
-...
-
-...
-
-\begin{figure}[b!]
+\begin{figure}[t!]
   \centerline{\includegraphics[width=\linewidth]{images/clusters.pdf}}
   \caption{Spectral clustering by k-means classification}
   \label{fig:clusters}
 \end{figure}
+
+\vspace{80pt}
+
+...
+
+\vspace{80pt}
+
+...
+
+\vspace{80pt}
+
+...
+
+\vspace{80pt}
+
+...
+
+\vspace{80pt}
 
 %% ================================ SUMMARY ====================================
 
 \section{Summary And Next Steps}
 \label{sec:summary}
 
+\vspace{80pt}
+
 ...
+
+\vspace{80pt}
+
+...
+
+\vspace{80pt}
 
 %% =============================== REFERENCES ==================================
 

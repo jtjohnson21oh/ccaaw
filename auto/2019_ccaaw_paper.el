@@ -27,6 +27,7 @@
     "sec:hlc"
     "tab:comms"
     "ssec:cognit"
+    "fig:model"
     "sec:software"
     "fig:features"
     "fig:data"
