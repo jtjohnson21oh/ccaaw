@@ -6,7 +6,7 @@
 #+OPTIONS: num:nil
 #+OPTIONS: html-postamble:nil
 * Links
-[[https://ryananan.github.io/ccaaw/2019_ccaaw_paper.pdf][Draft]] | [[https://ryananan.github.io/ccaaw/][README]] |[[https://github.com/ryananan/ccaaw][Repository]]
+[[https://ryananan.github.io/ccaaw/2019_ccaaw_paper.pdf][Draft]] | [[https://ryananan.github.io/ccaaw/][README]] | [[https://github.com/ryananan/ccaaw][Repository]]
 * Topics
 - Machine learning methods for self-reconfiguration and autonomous performance
   optimization
