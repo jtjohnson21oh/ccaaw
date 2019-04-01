@@ -25,9 +25,9 @@
     "sec:intro"
     "sec:overview"
     "sec:hlc"
-    "tab:comms"
     "ssec:cognit"
     "fig:model"
+    "ssec:ml"
     "sec:software"
     "fig:features"
     "fig:data"
@@ -37,7 +37,14 @@
     "fig:feedback"
     "ssec:cluster"
     "fig:clusters"
-    "sec:summary"
-    "sec:ref"))
+    "sec:summary")
+   (LaTeX-add-bibitems
+    "ref1"
+    "ref2"
+    "ref3"
+    "ref4"
+    "ref5"
+    "ref6"
+    "refx"))
  :latex)
 
