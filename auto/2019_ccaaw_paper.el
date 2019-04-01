@@ -45,6 +45,8 @@
     "ref4"
     "ref5"
     "ref6"
-    "refx"))
+    "refx")
+   (LaTeX-add-environments
+    '("IEEEbiography" LaTeX-env-args ["argument"] 1)))
  :latex)
 
