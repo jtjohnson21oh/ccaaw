@@ -305,29 +305,47 @@ Simulation data described in Fig.\ref{fig:data}(b) is produced by a simulation a
 \section{Summary And Next Steps}
 \label{sec:summary}
 
+The \project library and utilities facilitate exploration of the expanded decision space for future distributed satellite missions.  It includes a space physics engine, constellation design tools, network structures and algorithms, and is capable of producing verbose simulation data for experimental post-processing.  In this paper, observing system simulations were augmented by cognitive communication and machine learning techniques.  First, a deployed regression algorithm was simulated by the software library.  Second, simulation data was logged and used to train an external classification (clustering) model.
+
+Examples presented here indicate the value of cognitive communications and machine learning to future autonomous sensor networks.  The regression example demonstrated improvement in science value and optimized mission operations.  The clustering example indicates the versatility and portability of \project simulation data.
+
+Plans for project development include the following: adapt tools for use on high-performance computers to train neural networks; expand network algorithms for one-to-many wireless links; continue to optimize the route-finding algorithm; and explore additional Python packages for machine learning research and network analysis.  \project software was written in anticipation of integration with other tools.  Currently, significant external work is being done on~~simulation
+
 \newpage
+\noindent
+tools for on-board data processing, resource management, adaptive sensor hardware, and optimized constellations.  When combined, these tools will be capable of managing a complex design space for future satellite mission validation.
+
 
 %% =============================== REFERENCES ==================================
 
 \small
 \begin{thebibliography}{9}
 \bibitem{ref1} {
-    Paper on NASA vision statement for small satellite constellations
-  }
+    J. Spann, D. Pierce, and A. Petro, ``NASA Perspectives on CubeSat Technology
+    and Highlighted Activities'',
+    \textit{SNAP Nanosatellite/CubeSat Subject Matter Expert Exchange},
+    Brasilia, Brasil, June 2016}
 \bibitem{ref2} {
     A. G. Schmidt, G. Weisz, M. French, T. Flatley and C. Y. Villalpando,
     ``SpaceCubeX: A Framework For Evaluating Hybrid Multi-Core CPU/FPGA/DSP
-    Architectures,'' \textit{IEEE Aerospace Conference}, Big Sky, MT, 2017,
+    Architectures,'', \textit{IEEE Aerospace Conference}, Big Sky, MT, 2017,
     pp. 1-10.}
 \bibitem{ref3} {
-    Paper on overview of cognitive communications for satellites
-    (probably CCAA paper)}
+    E. Lagunas, S. K. Sharma, S. Maleki, S. Chatzinotas and B. Ottersten,
+    ``Resource Allocation for Cognitive Satellite Communications With Incumbent
+    Terrestrial Networks''
+    in \textit{IEEE Transactions on Cognitive Communications and Networking},
+    vol. 1, no. 3, pp. 305-317, Sept. 2015.}
 \bibitem{ref4} {
-    Paper On low-level of cognitive communications for satellites
-    (probably CCAA paper)}
+    S. K. Sharma, E. Lagunas, S. Chatzinotas and B. Ottersten, ``Application of
+    Compressive Sensing in Cognitive Radio Communications: A Survey''
+    in \textit{IEEE Communications Surveys and Tutorials},
+    vol. 18, no. 3, pp. 1838-1860, 2016.}
 \bibitem{ref5} {
-    Paper on low-level of cognitive communications for satellites
-    (probably CCAA paper)}
+    S. Maleki et al., ``Cognitive spectrum utilization in Ka band multibeam
+    satellite communications''
+    in \textit{IEEE Communications Magazine}, vol. 53, no. 3, pp. 24-29,
+    March 2015.}
 \bibitem{ref6} {
     R. B. Linnabary, A. O'Brien, G. E. Smith, C. D. Ball, and J. T. Johnson,
     ``Open Source Software For Simulating Collaborative Networks Of Autonomous
