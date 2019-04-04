@@ -14,16 +14,13 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \newcommand{\project}{{\sc{Collaborate}}~}
 \newcommand{\cpp}{C\texttt{++}~}
-\newcommand{\thisplace}{\ \ {Dept. Elec. \& Comp. Eng.}\ \ \\
-  {The Ohio State University}\\
+\newcommand{\thisplace}{\textit{~~Dept. Elec. \& Comp. Eng.~~}\\
+  \textit{The Ohio State University}\\
   Columbus, OH, USA\\
 }
 
 \title{{Using Cognitive Communications to Increase the Operational Value of
-    Collaborative Networks of Satellites}
-  \thanks{This research was sponsored by the NASA Advanced Information Systems
-    Technology Program NNH16ZDA001N-AIST.}
-}
+    Collaborative Networks of Satellites}}
 
 \author{
   \IEEEauthorblockN{Ryan B. Linnabary}
@@ -37,10 +34,10 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
   \and
   \IEEEauthorblockN{Christopher Ball}
   \IEEEauthorblockA{\thisplace ball.51@osu.edu}
-  \and {~} \and {~~~~~~~~~~~~~~} \and
+  \and {~} \and {~~~~~~~~~~~~~~~~~~~~~~~~~~~} \and
   \IEEEauthorblockN{Joel T. Johnson}
   \IEEEauthorblockA{\thisplace johnson.1374@osu.edu}
-  \and {~~~~~~} \and {~~~~~~}
+  \and {~~~~~~~~~~~~~~~~~~~~~~~} \and {~~~~~~~~~~~~~~~~~~~~~~}
 }
 
 %% =============================== DOCUMENT ====================================
@@ -51,11 +48,25 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 %% =============================== ABSTRACT ====================================
 
+\IEEEpubid{
+  \begin{minipage}{\textwidth} {
+      \ \\ \\ \\ \\ \\ [12pt]
+      \rule{0.488\textwidth}{0.4pt} \\
+      \hphantom{10pt}This research was sponsored by the NASA Advanced
+      Information Sys-\\tems Technology Program NNH16ZDA001N-AIST. \\ \\
+      \normalsize
+      978-1-7281-0048-7/19/\$31.00 \copyright2019 IEEE
+    }
+  \end{minipage}
+}
+
 \begin{abstract}
 
   Distributed satellite constellations utilizing networks of small satellites will be a {\color{black} key} enabler of new observing strategies in the next generation of NASA missions.  {\color{black} While} it is quickly becoming feasible to establish communication networks among small satellites, a {\color{black} key} question is how these networks can be best utilized to achieve objectives.  {\color{black} While} small satellite instruments are becoming more capable, they are still resource constrained (i.e. power, data, scanning systems, etc.); therefore, adaptive instruments that intelligently adjust parameters on the fly are {\color{black} key} for increasing operational value within these constraints.  In this context, the purpose of collaborative communication among small satellites is to achieve system-level adaptivity.  This dramatically increases the complexity of the control algorithms and decision space in which the small satellites communication networks must operate.  We postulate that cognition in the high-level collaborative communication is one approach to both achieve autonomy and to address this complex control space.  In this paper, we investigate concepts for how machine learning (ML) algorithms can be utilized in the high-level decision making of a communication system in a distributed satellite mission.  This paper will show cognitive communication model with ML and some example case study results.
 
 \end{abstract}
+
+\vspace{8pt}
 
 \begin{IEEEkeywords}
 
@@ -79,8 +90,6 @@ In this work, we show results of simulation studies to explore the advantages th
 \section{Collaborative Networks Of Adaptive Sensors}
 \label{sec:overview}
 
-% Satellite sensor constellations are now feasible.  Current constellations are managed in simple ways with ground contacts.  Future constellations operate more autonomously with inter-sat communications.
-
 Emerging remote sensor technology indicates a transition from few large monolithic satellites to greater numbers of heterogeneous small satellites.  Commercial and government entities have expressed interest in large-scale (1000 or more) small satellite constellations.  This transition will involve many system-level changes to how humans interact with and manage these systems.  For these complex systems, frequent ground contact (as is currently the case) will be impractical and inefficient.  Instead, most decisions related to scheduling or changing parameters will be done autonomously.
 
 Maximized operational value will rely on rapid cognitive adaptation of satellite sensor hardware.  This may occur in response to the direct measurements; however, full utilization of adaptive sensors will require collaborative communication among network nodes.  Collaborative networking inhabits a complex decision space and is at a low technology readiness level.  This research effort has revealed that machine learning and cognition are appropriate tools for exploring the expanded decision space.
@@ -91,9 +100,6 @@ Maximized operational value will rely on rapid cognitive adaptation of satellite
 
 \subsection{Cognitive Communications}
 \label{ssec:cognit}
-
-% Since many interpretations exist, we begin with defining what is
-% meant by Cognitive Communications.
 
 Many interpretations exist for the term \textit{Cognitive Communications}, so the following definitions provide context for this paper.  \textit{Cognition} refers to the act of selecting and carrying out actions based on both specific {\color{black} goals and perception of an external environment}.  Cognition necessarily includes learning from past experiences and {\color{black} interactions with the environment}.  Thus, a \textit{cognitive entity} is capable of taking action based on its {\color{black} goals and perception of the environment}, potentially learning from the result of its action.  It is an intelligent entity that possesses perception, learning, reasoning, and making decisions \cite{ref7}. \textit{Cognitive Communications} are communications whose operations are in some way dependent on cognition.
 
@@ -117,15 +123,6 @@ Machine learning provides computers the ability to learn without being explicitl
 Machine learning techniques are currently being applied in the development of adaptive hardware, resource optimization, and other areas of sensor network design.  An opportunity exists to use machine learning to optimize information flow within a collaborative network of satellites.  Improvements would increase communications efficiency by increasing the value of data contents and reducing operational resource consumption.
 
 All of the common machine learning algorithms apply to optimization of high-level network management tasks.  Regression tasks enable satellites to autonomously adjust parameters for communication, sensing, and on-board data processing.  Classification of network nodes based on proximity and capabilities could increase efficiency by informing antenna direction or temporal scheduling.  This research involves the application of new and existing machine learning algorithms.  Existing algorithms are widely available as third-party Python modules, and will be discussed later in Section~\ref{sec:software}.  Custom algorithms are developed for the \cpp library.
-
-% {
-%   \color{red}
-%   - Example references of how it has been applied
-
-% - Generation of training data, training of the NN, application of the NN to
-% the system. What are input and outputs. What are the steps? List of steps in
-% proposed procedure if needed
-% }
 
 %% =============================== SOFTWARE ====================================
 
@@ -155,10 +152,6 @@ A software tool-set \project is under development which is capable of producing 
     \end{center}
     \medskip
   \end{minipage}
-%   \caption{Simulated remote sensing}
-%   \label{fig:sensing}
-% \end{figure}
-% \begin{figure}[b]
   \begin{minipage}[b]{\linewidth}
     \begin{center}
       \includegraphics[width=\textwidth]{images/prim.pdf}
@@ -173,7 +166,6 @@ A software tool-set \project is under development which is capable of producing 
       {\footnotesize(f) Collaborative sequence in time}
     \end{center}
   \end{minipage}
-  % \caption{Simulated collaborative networks}
   \caption{\project software features}
   \label{fig:features}
 \end{figure}

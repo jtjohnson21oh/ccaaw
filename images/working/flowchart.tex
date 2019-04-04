@@ -28,11 +28,11 @@
 
   \node (pc) {\bf Perception};
   \node[below of=pc] (env) {\underline{Environment}};
-  \node[draw, fill=color1, below of=env] (ds) {Direct Sensing};
+  \node[draw, fill=color4, below of=env] (ds) {Direct Sensing};
   \node[below=1cm of ds] (nw) {\underline{Network}};
-  \node[draw, fill=color1, below of=nw] (if) {Inform};
-  \node[draw, fill=color1, below of=if] (es) {External Sensing};
-  \node[draw, fill=color1, below of=es] (fb) {Feedback};
+  \node[draw, fill=color4, below of=nw] (if) {Inform};
+  \node[draw, fill=color4, below of=if] (es) {External Sensing};
+  \node[draw, fill=color4, below of=es] (fb) {Feedback};
   \begin{pgfonlayer}{background}
     \draw[thick,dotted,fill=color5] {
       ($(pc)+(-2.8,0.5)$) rectangle ($(fb)+(2.8,-1.5)$)
@@ -53,11 +53,11 @@
 
   \node[right=4.5cm of pc] (act) {\bf Action};
   \node[below of=act] (par) {\underline{Parameters}};
-  \node[draw, fill=color1, below of=par] (sh) {Sensor Hardware};
-  \node[draw, fill=color1, below of=sh] (ch) {Comm. Hardware};
+  \node[draw, fill=color4, below of=par] (sh) {Sensor Hardware};
+  \node[draw, fill=color4, below of=sh] (ch) {Comm. Hardware};
   \node[below=1cm of ch] (mod) {\underline{Models}};
-  \node[draw, fill=color1, below of=mod] (dm) {Data Map};
-  \node[draw, fill=color1, below of=dm] (nn) {Neural Network};
+  \node[draw, fill=color4, below of=mod] (dm) {Data Map};
+  \node[draw, fill=color4, below of=dm] (nn) {Neural Network};
   \begin{pgfonlayer}{background}
     \draw[thick,dotted,fill=color5] {
       ($(act)+(-2.8,0.5)$) rectangle ($(nn)+(2.8,-1.5)$)
