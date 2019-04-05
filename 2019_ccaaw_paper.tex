@@ -9,8 +9,6 @@ etoolbox}
 \pdfsuppresswarningpagegroup=1
 \IEEEoverridecommandlockouts
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \newcommand{\project}{{\sc{Collaborate}}~}
 \newcommand{\cpp}{C\texttt{++}~}
@@ -19,8 +17,8 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
   Columbus, OH, USA\\
 }
 
-\title{{Using Cognitive Communications to Increase the Operational Value of
-    Collaborative Networks of Satellites}}
+\title{Using Cognitive Communications to Increase the Operational Value of
+  Collaborative Networks of Satellites}
 
 \author{
   \IEEEauthorblockN{Ryan B. Linnabary}
@@ -50,9 +48,9 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \IEEEpubid{
   \begin{minipage}{\textwidth} {
-      \ \\ \\ \\ \\ \\ [12pt]
-      \rule{0.488\textwidth}{0.4pt} \\
-      \hphantom{10pt}This research was sponsored by the NASA Advanced
+      ~ \\ \\ \\ \\ \\ \\
+      \rule{0.489\textwidth}{0.5pt} \\
+      \hphantom{12pt} This research was sponsored by the NASA Advanced
       Information Sys-\\tems Technology Program NNH16ZDA001N-AIST. \\ \\
       \normalsize
       978-1-7281-0048-7/19/\$31.00 \copyright2019 IEEE
@@ -62,7 +60,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{abstract}
 
-  Distributed satellite constellations utilizing networks of small satellites will be a {\color{black} key} enabler of new observing strategies in the next generation of NASA missions.  {\color{black} While} it is quickly becoming feasible to establish communication networks among small satellites, a {\color{black} key} question is how these networks can be best utilized to achieve objectives.  {\color{black} While} small satellite instruments are becoming more capable, they are still resource constrained (i.e. power, data, scanning systems, etc.); therefore, adaptive instruments that intelligently adjust parameters on the fly are {\color{black} key} for increasing operational value within these constraints.  In this context, the purpose of collaborative communication among small satellites is to achieve system-level adaptivity.  This dramatically increases the complexity of the control algorithms and decision space in which the small satellites communication networks must operate.  We postulate that cognition in the high-level collaborative communication is one approach to both achieve autonomy and to address this complex control space.  In this paper, we investigate concepts for how machine learning (ML) algorithms can be utilized in the high-level decision making of a communication system in a distributed satellite mission.  This paper will show cognitive communication model with ML and some example case study results.
+  Distributed satellite constellations utilizing networks of small satellites will be a key enabler of new observing strategies in the next generation of NASA missions.  While it is quickly becoming feasible to establish communication networks among small satellites, a critical question is how these networks can be best utilized to achieve objectives.  Small satellite instruments are becoming more capable, but they are still resource constrained (i.e. power, data, scanning systems, etc.); therefore, adaptive instruments that intelligently adjust parameters {\color{black} on the fly} are essential for increasing operational value within these constraints.  In this context, the purpose of collaborative communication among small satellites is to achieve system-level adaptivity.  This dramatically increases the complexity of the control algorithms and decision space in which the small satellites communication networks must operate.  We postulate that cognition in the high-level collaborative communication is one approach to both achieve autonomy and to address this complex control space.  In this paper, we investigate concepts for how machine learning (ML) algorithms can be utilized in the high-level decision making of a communication system in a distributed satellite mission.  This paper will show cognitive communication model with ML and some example case study results.
 
 \end{abstract}
 
@@ -70,7 +68,8 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{IEEEkeywords}
 
-  Distributed Satellite Missions, Autonomous Systems, Sensor Network, Sensor Web, OSSE
+  Distributed Satellite Missions, Autonomous Systems, Sensor Network, Sensor
+Web, OSSE
 
 \end{IEEEkeywords}
 
@@ -103,14 +102,46 @@ Maximized operational value will rely on rapid cognitive adaptation of satellite
 
 Many interpretations exist for the term \textit{Cognitive Communications}, so the following definitions provide context for this paper.  \textit{Cognition} refers to the act of selecting and carrying out actions based on both specific {\color{black} goals and perception of an external environment}.  Cognition necessarily includes learning from past experiences and {\color{black} interactions with the environment}.  Thus, a \textit{cognitive entity} is capable of taking action based on its {\color{black} goals and perception of the environment}, potentially learning from the result of its action.  It is an intelligent entity that possesses perception, learning, reasoning, and making decisions \cite{ref7}. \textit{Cognitive Communications} are communications whose operations are in some way dependent on cognition.
 
+% Link: https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6687307
+% --------------------------------------------------------------------------
+% The term ``cognitive'' may be interpreted in multiple ways, we define here a
+% cognitive entity as one that is capable of selecting and carrying out actions
+% depending on its own goals and its perception of the world and that may also
+% be capable of learning from experience by interacting with the world. Thus, a
+% cognitive entity means an intelligent entity which possesses the following
+% basic components: perception, learning/reasoning and decision
+% making. Cognitive Communications and Networking must explicitly include
+% approaches related to the ``intelligent entity'' and communications or
+% networking.
+
+% Link: https://ieeexplore.ieee.org/servlet/opac?punumber=6687307
+% ---------------------------------------------------------------
+% The IEEE Transactions on Cognitive Communications and Networking (TCCN) is
+% committed to timely publishing of high-quality manuscripts that advance to
+% the state-of-the-art of cognitive communications and networking
+% research. Cognitive in this context means the applications of perception,
+% learning, reasoning, memory and adaptive approaches in the design of
+% communication systems. The transactions will consider submissions in the
+% broad area of cognitive communications and networks, with an emphasis on
+% taking holistic and possibly trans-disciplinary approach on design of
+% complex communications systems. The core topics covered include (but are
+% not limited to): architecture, protocols, cross-layer, and cognition cycle
+% design for cognitive networks, machine learning and artificial intelligence
+% for cognitive communications and networks, end-to-end and distributed
+% intelligence at and beyond all layers of communications, software-defined
+% networking, cognitive radios, spectrum sharing, trading and relevant
+% economical aspects of networks, security and privacy issues in cognitive
+% networks, novel emerging services and applications enabled by such
+% concepts.
+
 Thus far, research into cognitive communication for satellite systems has been predominantly focuses on low-level communication.  For example, on-line machine learning was used to optimize the selection of optimal combinations of software-defined radio parameters in \cite{ref4}.  Cognitive digital beamforming is applied to satellite communication in \cite{ref5}.  However, cognition can also be applied to the higher-level aspects of a communication system.  For example, cognition could be applied to the intelligent routing of information within an autonomous satellite sensor network \cite{ref7}.  Alternatively, this routing could establish a collaborative improvement in mission science return and achieve, in effect, a system level adaptivity in response to events.  Thus, consideration of collaboration to ``adaptive remote sensing'' and feedback are added to traditional inter-satellite communication.
 
-A model for cognitive communications is illustrated in Fig.\ref{fig:model}, the perception-action cycle for proposed autonomous networks.  The model describes a satellite network which communicates collaboratively to perform cognitive routines.  Perception is not limited to a satellite's own measurements; it involves network interaction as well.  Nodes in this network take action to learn from perception, improving operations by re-configuring hardware or updating an internal model.  In this way, the network relies less on human interaction and becomes \textit{autonomous}.
+A model for cognitive communications is illustrated in Figure~\ref{fig:model}, the perception-action cycle for proposed autonomous networks.  The model describes a satellite network which communicates collaboratively to perform cognitive routines.  Perception is not limited to a satellite's own measurements; it involves network interaction as well.  Nodes in this network take action to learn from perception, improving operations by re-configuring hardware or updating an internal model.  In this way, the network relies less on human interaction and becomes \textit{autonomous}.
 
 \begin{figure}[t]
-  \centerline{\includegraphics[width=0.9\linewidth]
-    {images/working/flowchart.pdf}
-  }
+  \begin{center}
+    \includegraphics[width=0.9\linewidth] {images/working/flowchart.pdf} \\
+  \end{center}
   \caption{Cognitive Communications Model}
   \label{fig:model}
 \end{figure}
@@ -136,14 +167,14 @@ A software tool-set \project is under development which is capable of producing 
 \begin{figure}[b!]
   \begin{minipage}[b]{\linewidth}
     \begin{center}
-      \includegraphics[width=\textwidth]{images/constellations.pdf}
+      \includegraphics[width=\textwidth]{images/constellations.pdf} \\
       {\footnotesize(a) Various constellations defined by orbit patterns}
     \end{center}
     \medskip
   \end{minipage}
   \begin{minipage}[b]{\linewidth}
     \begin{center}
-      \includegraphics[width=\textwidth]{images/remote_sensing.pdf}
+      \includegraphics[width=\textwidth]{images/remote_sensing.pdf} \\
       {\footnotesize{
           \color{white}~~~~~~~~\color{black}
           (b) Cloud Depth~~~~~~~~~~~~
@@ -154,7 +185,7 @@ A software tool-set \project is under development which is capable of producing 
   \end{minipage}
   \begin{minipage}[b]{\linewidth}
     \begin{center}
-      \includegraphics[width=\textwidth]{images/prim.pdf}
+      \includegraphics[width=\textwidth]{images/prim.pdf} \\
       {\footnotesize(e) Instantaneous network graph structure (minimum spanning
         tree)}
     \end{center}
@@ -162,7 +193,7 @@ A software tool-set \project is under development which is capable of producing 
   \end{minipage}
   \begin{minipage}[b]{\linewidth}
     \begin{center}
-      \includegraphics[width=\textwidth]{images/collaborate.pdf}
+      \includegraphics[width=\textwidth]{images/collaborate.pdf} \\
       {\footnotesize(f) Collaborative sequence in time}
     \end{center}
   \end{minipage}
@@ -170,13 +201,13 @@ A software tool-set \project is under development which is capable of producing 
   \label{fig:features}
 \end{figure}
 
-The \project library offers a number of unique features valuable to future observing system simulation experiments.  At its core, it is a physics engine for satellite position, velocity, and attitude.  Power and RF accessories may be attached to satellites and individually oriented.  The next level involves rapid constellation design.  Standard orbit models described by two-line-element (TLE) sets are provided, copied, and modified to generate novel and interesting constellation patterns.  Examples are illustrated in Fig.\ref{fig:features}(a).
+The \project library offers a number of unique features valuable to future observing system simulation experiments.  At its core, it is a physics engine for satellite position, velocity, and attitude.  Power and RF accessories may be attached to satellites and individually oriented.  The next level involves rapid constellation design.  Standard orbit models described by two-line-element (TLE) sets are provided, copied, and modified to generate novel and interesting constellation patterns.  Examples are illustrated in Figure~\ref{fig:features}(a).
 
-Sensor hardware is attached to satellites as an interface to truth data (NetCDF Nature Run data).  This provides a custom modeling environment for real sensor hardware and enables heterogeneous sensor constellations with different capabilities.  As a satellite orbits, its pointing vector intersects Earth's surface or an atmospheric layer and samples the underlying data, as shown in Fig.\ref{fig:features}(b-d).
+Sensor hardware is attached to satellites as an interface to truth data (NetCDF Nature Run data).  This provides a custom modeling environment for real sensor hardware and enables heterogeneous sensor constellations with different capabilities.  As a satellite orbits, its pointing vector intersects Earth's surface or an atmospheric layer and samples the underlying data, as shown in Figure~\ref{fig:features}(b-d).
 
-\project is named for its ability to manage collaborative networks of satellites.  Its implementation focuses on the high-level communication decision space discussed in Section~\ref{sec:overview}.  The library employs, in addition to standard \cpp components, advanced data structures including trees and graphs to execute predictive route-finding algorithms for efficient communications.  For example, line-of-sight wireless channels are captured in a graph, as illustrated in Fig.\ref{fig:features}(e), the minimum spanning tree.
+\project is named for its ability to manage collaborative networks of satellites.  Its implementation focuses on the high-level communication decision space discussed in Section~\ref{sec:overview}.  The library employs, in addition to standard \cpp components, advanced data structures including trees and graphs to execute predictive route-finding algorithms for efficient communications.  For example, line-of-sight wireless channels are captured in a graph, as illustrated in Figure~\ref{fig:features}(e), the minimum spanning tree.
 
-A predictive scheduling algorithm is illustrated in Fig.\ref{fig:features}(f).  Satellite ``A'' measures cloud depth in the Pacific Ocean (blue line).  It then predicts the arrival of a follow-up satellite and relays a message through satellites ``B'' and ``C'' to queue ``D'' for a measurement with a different sensor (red line).  Significant work has been done to optimize this algorithm, because it is the main consumer of CPU time and is run regularly in simulation to find routes.  It is also the foundation for deployed cognitive communications, as discussed in Section~\ref{sec:examples}.
+A predictive scheduling algorithm is illustrated in Figure~\ref{fig:features}(f).  Satellite ``A'' measures cloud depth in the Pacific Ocean (blue line).  It then predicts the arrival of a follow-up satellite and relays a message through satellites ``B'' and ``C'' to queue ``D'' for a measurement with a different sensor (red line).  Significant work has been done to optimize this algorithm, because it is the main consumer of CPU time and is run regularly in simulation to find routes.  It is also the foundation for deployed cognitive communications, as discussed in Section~\ref{sec:examples}.
 
 Presently, the included algorithms are iterative and often take minutes to conclude.  It may be possible to reduce run-time or optimize routes based on alternative parameters using machine learning.  An option is to replace these algorithms with predictive neural networks for advanced regression or classification algorithms.  \project facilitates this by producing data in standard formats for post-processing.
 
@@ -197,11 +228,11 @@ Presently, the included algorithms are iterative and often take minutes to concl
   \label{fig:data}
 \end{figure}
 
-The software logs simulation data to files accessible by external machine learning tools.  \project was developed around simple data formats for portability and to promote development of custom analysis tools.  Primarily, data is serialized and written to binary files.  These formats are well documented and easy to parse in Python or other scripting languages.  Included Python packages understand the data formats and can read and store the data for later use as Numpy or Pandas data structures.  Examples include time-series data frames or network adjacency matrices (weighted and unweighted).  Fig.\ref{fig:data} shows several common data structures in memory; one to store satellite parameters; and another for network structures.
+The software logs simulation data to files accessible by external machine learning tools.  \project was developed around simple data formats for portability and to promote development of custom analysis tools.  Primarily, data is serialized and written to binary files.  These formats are well documented and easy to parse in Python or other scripting languages.  Included Python packages understand the data formats and can read and store the data for later use as Numpy or Pandas data structures.  Examples include time-series data frames or network adjacency matrices (weighted and unweighted).  Figure~\ref{fig:data} shows several common data structures in memory; one to store satellite parameters; and another for network structures.
 
 Python scripts are provided not only for receiving simulation data at a low level, but also many high level analysis tasks.  In fact, all figures in this document were produced using the tools provided by the library.  Primary third-party packages used include the following: Numpy, Pandas, Cython, NetCDF4, Matplotlib, Cartopy, Scikitlearn, TensorFlow, and SciPy.  These enable post processing for plots and animations or to train machine learning algorithms.  Numpy and Pandas provide powerful linear algebra and statistics operations.  Cartopy provides extensive map projections and transformations which support visualizing satellite positions and truth data.  Machine learning algorithms are available in the Scikitlearn and Tensorflow packages, which interface well with Numpy and Pandas structures.
 
-For example, satellite parameter data (Fig.\ref{fig:data}(a)) is plotted in Fig.\ref{fig:processing} to expose and potentially exploit correlations.  Several of these seem strongly correlated and many are also periodic.  Potential high-level communications optimizations may involve predicting when a satellite has the most visible neighbors (available line-of-sight links).  An algorithm for power management scheduling may use the instantaneous charge or power to plan efficient sensor operation.
+For example, satellite parameter data (Figure~\ref{fig:data}(a)) is plotted in Figure~\ref{fig:processing} to expose and potentially exploit correlations.  Several of these seem strongly correlated and many are also periodic.  Potential high-level communications optimizations may involve predicting when a satellite has the most visible neighbors (available line-of-sight links).  An algorithm for power management scheduling may use the instantaneous charge or power to plan efficient sensor operation.
 
 \begin{figure}[t]
   \begin{center}
@@ -221,16 +252,16 @@ The following examples demonstrate cognitive communications and machine learning
 \subsection{Cognitive Feedback For Autonomous Parameter Regression}
 \label{ssec:feedback}
 
-\begin{figure}[b!]
+\begin{figure}[t!]
   \begin{minipage}[b]{\linewidth}
     \begin{center}
-      \includegraphics[width=\textwidth]{images/loop.pdf}
+      \includegraphics[width=\textwidth]{images/loop.pdf} \\
       {\footnotesize(a) Feedback route}
     \end{center}
   \end{minipage}
   \begin{minipage}[b]{\linewidth}
     \begin{center}
-      \includegraphics[width=0.9\textwidth]{images/regression.pdf}
+      \includegraphics[width=0.9\textwidth]{images/regression.pdf} \\
       {\footnotesize(b) Autonomous parametric regression for data correlation
         threshold}
     \end{center}
@@ -239,18 +270,18 @@ The following examples demonstrate cognitive communications and machine learning
   \label{fig:feedback}
 \end{figure}
 
-Section~\ref{sec:software} shows that \project provides a network algorithm for predicting optimal routes, such as the one illustrated in Fig.\ref{fig:features}(f); this can also be used to predict a path for feedback to the original satellite.  A single feedback cycle is shown in Fig.\ref{fig:feedback}(a).  In this plot, a cognitive satellite travels from South America over the Atlantic and senses data over Africa (blue line).  Internal processing reveals that the science value of a follow-up measurement exceeds expected resource costs, so the satellite predicts the arrival of another sensor platform.  A message is forwarded through the network over the Pacific to queue the next measurement.  After a follow-up measurement, data is fed back to the original satellite over the Middle East and China.  The contents of this feedback message inform corrective action by the cognitive satellite.
+Section~\ref{sec:software} shows that \project provides a network algorithm for predicting optimal routes, such as the one illustrated in Figure~\ref{fig:features}(f); this can also be used to predict a path for feedback to the original satellite.  A single feedback cycle is shown in Figure~\ref{fig:feedback}(a).  In this plot, a cognitive satellite travels from South America over the Atlantic and senses data over Africa (blue line).  Internal processing reveals that the science value of a follow-up measurement exceeds expected resource costs, so the satellite predicts the arrival of another sensor platform.  A message is forwarded through the network over the Pacific to queue the next measurement.  After a follow-up measurement, data is fed back to the original satellite over the Middle East and China.  The contents of this feedback message inform corrective action by the cognitive satellite.
 
-Science value optimization is demonstrated by a 24-hour simulation where this feedback cycle is repeated 75 times.  In this simulation, the cognitive satellite performs a regression task to discover the correlation between cloud depth and precipitation.  The top plot in Fig.\ref{fig:feedback}(b) illustrates regression of the target parameter (cloud depth threshold for non-zero precipitation).  Initially the threshold is set to 0 meters and the cloud radar requests follow-up precipitation measurements indiscriminately.  For the first 16 regression cycles in the bottom plot of Fig.\ref{fig:feedback}(b), 20 percent of the precipitation sensors measured non-zero precipitation.  At 16 cycles the satellite begins adjusting the threshold, which converges to a value of 65 meters after 32 cycles.  The new threshold improves operational science return by increasing the number of non-zero precipitation measurements to 50 percent.
+Science value optimization is demonstrated by a 24-hour simulation where this feedback cycle is repeated 75 times.  In this simulation, the cognitive satellite performs a regression task to discover the correlation between cloud depth and precipitation.  The top plot in Figure~\ref{fig:feedback}(b) illustrates regression of the target parameter (cloud depth threshold for non-zero precipitation).  Initially the threshold is set to 0 meters and the cloud radar requests follow-up precipitation measurements indiscriminately.  For the first 16 regression cycles in the bottom plot of Figure~\ref{fig:feedback}(b), 20 percent of the precipitation sensors measured non-zero precipitation.  At 16 cycles the satellite begins adjusting the threshold, which converges to a value of 65 meters after 32 cycles.  The new threshold improves operational science return by increasing the number of non-zero precipitation measurements to 50 percent.
 
 \subsection{Spectral Clustering Using Simulated Network Data}
 \label{ssec:cluster}
 
-Simulation data described in Fig.\ref{fig:data}(b) is produced by a simulation and used to train a machine learning (classification) algorithm.  The data contains a time series of adjacency matrices with edge weights equal to line-of-sight distances between nodes.  A single frame of this data is inverted and normalized to produce an affinity matrix suitable for ScikitLearn's SpectralClustering algorithm.  This algorithm identifies normalized cuts in the graph and separates nodes into groups.  Fig.\ref{fig:clusters}(a-c) show how a graph is sorted and reduced to isolate groups of nodes based on proximity.  Fig.\ref{fig:clusters}(d) shows the 15 clusters using actual satellite positions.
+Simulation data described in Figure~\ref{fig:data}(b) is produced by a simulation and used to train a machine learning (classification) algorithm.  The data contains a time series of adjacency matrices with edge weights equal to line-of-sight distances between nodes.  A single frame of this data is inverted and normalized to produce an affinity matrix suitable for ScikitLearn's SpectralClustering algorithm.  This algorithm identifies normalized cuts in the graph and separates nodes into groups.  Figure~\ref{fig:clusters}(a-c) show how a graph is sorted and reduced to isolate groups of nodes based on proximity.  Figure~\ref{fig:clusters}(d) shows the 15 clusters using actual satellite positions.
 
 \project currently supports one-to-one communication, but future network schemes will require one-to-many links and will likely employ clustering as a single part of its optimization routine.  For example a satellite may strategically orient its antenna toward the center of its cluster, maximizing signal strength for its immediate neighbors.
 
-\begin{figure}[b!]
+\begin{figure}[t!]
   \begin{minipage}[b]{0.32\linewidth}
     \begin{center}
       \includegraphics[width=\textwidth]{images/los_matrix.pdf} \\
