@@ -17,7 +17,7 @@ etoolbox}
   Columbus, OH, USA\\
 }
 
-\title{Using Cognitive Communications to Increase the Operational Value of
+\title{Using Cognitive Communications // to Increase the Operational Value of //
   Collaborative Networks of Satellites}
 
 \author{
@@ -64,14 +64,14 @@ etoolbox}
 will be a key enabler of new observing strategies in the next generation of NASA
 missions.  While it is quickly becoming feasible to establish communication
 networks among small satellites, a critical question is how these networks can
-be best utilized to achieve objectives.  Small satellite instruments are
-becoming more capable, but they are still resource constrained (i.e. power,
-data, scanning systems, etc.).  Adaptive instruments that intelligently adjust
+best be utilized to achieve objectives.  Small satellite instruments are
+becoming more capable, but are still resource constrained (i.e. power,
+data, scanning systems, etc.) in many situations.  Adaptive instruments that intelligently adjust
 parameters {\color{black} on the fly} are essential for increasing operational
-value within these constraints, and the primary purpose of collaborative
+value within these constraints. On a system scale, the primary purpose of collaborative
 communication among small satellites is to achieve system-level adaptivity.
-This could dramatically increase the complexity of the control algorithms for
-small satellite communication networks.  Application of cognitive communication
+Collaborative communications however may also dramatically increase the complexity of the control algorithms for
+small satellite communication networks.  Application of cognitive communication methods
 is one promising method to address this problem.  In this paper, we discuss our
 recent investigations into how machine learning (ML) algorithms can be utilized
 in the high-level decision making of a communication system in a distributed
@@ -121,15 +121,15 @@ realistic constraints in communication, power, and measurements.  A key focus of
 this software is the simulation of sensors that operate adaptively.  Adaptive
 sensors must make intelligent decisions regarding their configuration based on
 their own measurements as well as the measurements provided by other sensors in
-a network.  However, the extreme complexity of the decision space makes the
-development of optimal decision-making systems very difficult.  Thus, an
-approach based on cognition could offer an appealing solution.  We investigate
+a network.  However, the complexity of the decision space makes the
+development of optimal decision-making systems difficult.  Approaches based on models for
+``cognition" offer an appealing approach to this challenge.  We investigate
 how our simulation tools could be useful for production of large training
 data-sets that capture the operation of collaborative, adaptive networks of
 small satellites.  We then investigate how such a data-set could be combined
 with machine learning techniques to train neural networks that could make
 intelligent decisions about when and what to communicate.  The applicability of
-these methods to future cognitive space communication will be discussed.
+these methods to future cognitive space communication is also discussed.
 
 %% ========================= HIGH-LEVEL COGNITION ==============================
 
@@ -142,8 +142,8 @@ Figure \ref{fig:figure1}.  Cognition necessarily includes learning from past
 experiences and {\color{black} interactions with the environment}.  Thus, a
 \textit{cognitive entity} is capable of taking action based on its
 {\color{black} goals and perception of the environment}, potentially learning
-from the result of its action.  It is an intelligent entity that possesses
-perception, learning, reasoning, and making decisions
+from the results of its actions.  The resulting entity is an intelligent system that possesses
+perception, learning, reasoning, and decision making capabilities
 \cite{ref7}. \textit{Cognitive Communications} are communications whose
 operations are in some way dependent on cognition.
 
@@ -158,7 +158,7 @@ operations are in some way dependent on cognition.
 Research into cognitive communication algorithms for satellite systems have
 focused on communications at a low level, including decision making regarding
 modulation, power, bandwidth, and error rate.  For example, on-line machine
-learning was used to optimize the selection of of software-defined radio
+learning was used to optimize the selection of software-defined radio
 parameters in \cite{ref4}.  Cognitive digital beamforming has also been applied
 to satellite communication \cite{ref5}.  However, cognition can also be applied
 to the higher-level aspects of a communication system, such as the intelligent
@@ -199,6 +199,8 @@ small satellite constellation by causing them to adjust their sensors and make
 measurements in an improved manner.  The information about this influence is fed
 back to the original satellite so that it can learn from this reaction.
 
+%JTJ there is a typo in the text of FIgure 3 that needs correcting. Information is misspelled.
+
 \begin{figure}[b!]
   \begin{center}
     \includegraphics[width=0.9\linewidth] {images/Figure2.pdf} \\
@@ -207,27 +209,27 @@ back to the original satellite so that it can learn from this reaction.
   \label{fig:figure2}
 \end{figure}
 
-The problem that prevents a practical implementation of the model shown in
-Figure \ref{fig:figure2} is that the decision-making and learning processes is
-very difficult to model and design.  This is especially true when considering
+A problem that prevents practical implementation of the model shown in
+Figure \ref{fig:figure2} is that the decision-making and learning processes are
+difficult to model and design.  This is especially true when considering
 the significant uncertainty at any given moment given the state of the
 constellation and the communication routes available.  Machine Learning (ML) is
-one approach to overcome this problem.  Machine learning techniques are
+one approach to address this problem.  Machine learning techniques are
 currently being applied in the development of adaptive hardware, resource
 optimization, and other areas of sensor network design.  An opportunity exists
-here to use machine learning to optimize information flow within a collaborative
+in satellite sensing applications to use machine learning to optimize information flow within a collaborative
 network of satellites.  Improvements would increase communications efficiency by
-increasing the value of data contents and reducing operational resource
+increasing the value of the data obtained and by reducing operational resource
 consumption.
 
 The most common machine learning categories (i.e. regression and classification)
 can be applied to high-level network management tasks.  Regression tasks enable
-satellites to autonomously adjust parameters for communication, sensing, and
-on-board data processing.  Classification of network nodes based on proximity
-and capabilities could increase efficiency by informing antenna direction or
-temporal scheduling.  %Our research is exploring this new application using
-existing machine learning algorithms, a key part of which is the generation of
-training data.
+satellites to adjust parameters autonomously for communication, sensing, and
+on-board data processing.  Further classification of network nodes based on their proximity
+and capabilities could further increase efficiency by informing antenna pointing or
+temporal scheduling decisions.  %Our research is exploring this new application using
+%existing machine learning algorithms, a key part of which is the generation of
+%training data.
 
 \section{Sensor Network Simulations to Support Machine Learning}
 \label{sec:software}
@@ -235,7 +237,7 @@ training data.
 %% =============================== SOFTWARE ====================================
 
 A software tool-set \project is under development which is capable of producing
-the training data for ML algorithms.  The tool-set has two main components:
+the required training data to implement ML algorithms for these purposes.  The tool-set has two main components:
 first, a \cpp development library for observing system simulation experiments;
 and second, a Python visualization and analysis package for post-processing of
 data.  The project is published to a Git repository under the GPLv3.0 license.
@@ -271,16 +273,17 @@ data.  The project is published to a Git repository under the GPLv3.0 license.
 \end{figure}
 
 The \project library offers a number of unique features valuable to future
-observing system simulation experiments.  At its core, it is a physics engine
-for satellite position, velocity, and attitude.  Power and RF accessories may be
+observing system simulation experiments.  At its core, it is a prediction engine
+for satellite position, velocity, and attitude that is coupled to associted spacecraft 
+power and communication accessories that may be
 attached to satellites and individually oriented.  The next level involves rapid
 constellation design.  Standard orbit models described by two-line-element (TLE)
-sets are provided, copied, and modified to generate novel and interesting
+sets are provided, copied, and modified to generate novel 
 constellation patterns.  Examples are illustrated in
-Figure~\ref{fig:features}(a).  Sensor hardware is attached to satellites as an
-interface to truth data (NetCDF Nature Run data).  This provides a custom
-modeling environment for real sensor hardware and enables heterogeneous sensor
-constellations with different capabilities.  As a satellite orbits, its pointing
+Figure~\ref{fig:features}(a).  Finally, sensor hardware is attached to satellites as an
+interface to geophysical datasets from Earth systems models (e.g. NetCDF Nature Run data).  This provides a custom
+modeling environment for realistic sensor hardware and enables heterogeneous sensor
+constellations in which each node possesses distinct sensing capabilities.  As a satellite orbits, its pointing
 vector intersects Earth's surface or an atmospheric layer and samples the
 underlying data, as shown in Figure~\ref{fig:features}(b-d).
 
@@ -293,11 +296,11 @@ line-of-sight wireless channels are captured in a graph, as illustrated in
 Figure~\ref{fig:features}(e), the minimum spanning tree.
 
 The software logs simulation data to files accessible by external machine
-learning tools.  \project was developed around simple data formats for
-portability and to promote development of custom analysis tools.  Primarily,
-data is serialized and written to binary files.  These formats are well
-documented and easy to parse in Python or other scripting languages.  Included
-Python packages understand the data formats and can read and store the data for
+learning tools.  \project was developed around simple data formats (typically data is serialized and written to binary files) for
+portability and to promote development of custom analysis tools.  
+These formats are well
+documented and easy to parse in Python or other scripting languages.  The included
+Python packages read and store the data for
 later use as Numpy or Pandas data structures.  Examples include time-series data
 frames or network adjacency matrices (weighted and unweighted).
 Figure~\ref{fig:data} shows several common data structures in memory; one to
@@ -321,22 +324,23 @@ store satellite parameters; and another for network structures.
 \end{figure}
 
 Python scripts are provided not only for receiving simulation data at a low
-level, but also many high level analysis tasks.  In fact, all figures in this
-document were produced using the tools provided by the library.  Primary
-third-party packages used include the following: Numpy, Pandas, Cython, NetCDF4,
-Matplotlib, Cartopy, Scikitlearn, TensorFlow, and SciPy.  These enable post
+level, but also for high level analysis tasks ( note that all figures in this
+document were produced using the tools provided by the library).  
+Third-party packages used include: Numpy, Pandas, Cython, NetCDF4,
+Matplotlib, Cartopy, Scikitlearn, TensorFlow, and SciPy.  These tools enable post
 processing for plots and animations or to train machine learning algorithms.
-Numpy and Pandas provide powerful linear algebra and statistics operations.
-Cartopy provides extensive map projections and transformations which support
+In particular, Numpy and Pandas provide powerful linear algebra and statistics operations, while
+Cartopy provides map projections and transformations to support
 visualizing satellite positions and truth data.  Machine learning algorithms are
 available in the Scikitlearn and Tensorflow packages, which interface well with
-Numpy and Pandas structures.  For example, satellite parameter data
-(Figure~\ref{fig:data}(a)) is plotted in Figure~6. %to expose and potentially
-exploit correlations.  Several of these seem strongly correlated and many are
-also periodic.  Potential high-level communications optimizations may involve
-predicting when a satellite has the most visible neighbors (available
-line-of-sight links).  An algorithm for power management scheduling may use the
-instantaneous charge or power to plan efficient sensor operation.
+Numpy and Pandas structures.  Satellite parameter data
+(Figure~\ref{fig:data}(a)) is plotted in Figure~6 as an example, %to expose and potentially
+%exploit correlations.  
+which shows that several operational parameters are strongly correlated and have a periodic
+variation with orbit position.  High-level communications optimizations may involve this data
+for example to predict when a satellite has the greatest number of visible neighbors (i.e. available
+line-of-sight links).  Similarly, an algorithm for power management scheduling may use the
+instantaneous charge or power to plan efficient sensor operations.
 
 \begin{figure}[t]
   \begin{center}
@@ -354,7 +358,7 @@ instantaneous charge or power to plan efficient sensor operation.
 The following examples demonstrate cognitive communications and machine learning
 techniques applied to software simulations.  First, parametric regression is
 automated using the \project network feedback algorithm.  This simulates
-deployed machine learning in a realistic observing system.  Second, satellites
+deploying machine learning in a realistic observing system.  Second, satellites
 are classified based on line-of-sight proximity.  This demonstrates the utility
 of \project simulation data for training external machine learning models.
 
@@ -386,7 +390,7 @@ of \project simulation data for training external machine learning models.
   \label{fig:feedback}
 \end{figure}
 
-Section~\ref{sec:software} shows that \project provides a network algorithm for
+Section~\ref{sec:software} showed that \project provides a network algorithm for
 predicting optimal routes, such as the one illustrated in
 Figure~\ref{fig:figureColab}; this can also be used to predict a path for
 feedback to the original satellite.  A single feedback cycle is shown in
@@ -400,12 +404,19 @@ fed back to the original satellite over the Middle East and China.  The contents
 of this feedback message inform corrective action by the cognitive satellite.
 
 Science value optimization is demonstrated by a 24-hour simulation where this
-feedback cycle is repeated 75 times.  In this simulation, the cognitive
+feedback cycle is repeated 75 times.  In this simulation, the sensing goal focuses on
+the measurement of precipitation, so that methods to inform other satellites of the
+presence of precipitation are of interest. In this simulation, a first satellite
+that is capable of measuring cloud depth (but not precipitation) is used to
+provide guidance to a sensor on a differing platform that measures precipitation.
+In the simulation, the cloud-depth measuring sensor first requests follow-up
+measurements from the precipitation sensor in all cases. However, through
+knowledge of the outcome of the follow up measurement in each case, the cognitive
 satellite performs a regression task to discover the correlation between cloud
 depth and precipitation.  The top plot in Figure~\ref{fig:feedback}(c)
 illustrates regression of the target parameter (cloud depth threshold for
-non-zero precipitation).  Initially the threshold is set to 0 meters and the
-cloud radar requests follow-up precipitation measurements indiscriminately.  For
+non-zero precipitation).  The initial value of 0 meters represents the case when
+the cloud depth sensor requests follow up precipitation measurements indiscriminately.  For
 the first 16 regression cycles in the bottom plot of
 Figure~\ref{fig:feedback}(d), 20 percent of the precipitation sensors measured
 non-zero precipitation.  At 16 cycles the satellite begins adjusting the
@@ -416,16 +427,17 @@ non-zero precipitation measurements to 50 percent.
 \subsection{Spectral Clustering Using Simulated Network Data}
 \label{ssec:cluster}
 
-Simulation data described in Figure~\ref{fig:data}(b) is produced by a
-simulation and used to train a machine learning (classification) algorithm.  The
-data contains a time series of adjacency matrices with edge weights equal to
+As an additional example, the network parameter data described in Figure~\ref{fig:data}(b) was obtained
+from a simulation and used to train a machine learning (classification) algorithm.  The
+data contains a time series of adjacency matrices with edge weights equal to the
 line-of-sight distances between nodes.  A single frame of this data is inverted
 and normalized to produce an affinity matrix suitable for ScikitLearn's
 SpectralClustering algorithm.  This algorithm identifies normalized cuts in the
 graph and separates nodes into groups.  Figure~\ref{fig:clusters}(a-c) show how
 a graph is sorted and reduced to isolate groups of nodes based on proximity.
 Figure~\ref{fig:clusters}(d) shows the 15 clusters using actual satellite
-positions.
+positions, and demonstrates the success of the Machine Learning algorithm in
+identifying appropriate groupings of nodes to optimize network communications.
 
 \begin{figure}[t!]
   \begin{minipage}[b]{0.32\linewidth}
@@ -460,11 +472,14 @@ positions.
 \vfill
 \break
 
+The results of these studies demonstrate the potential advantages of multi-platform collaborative sensing, as well as the need for robust simulation tools to achieve robust performance. The Machine Learning approach examined also shows many of the properties
+of a cognitive entity in refining and optimizing measurement strategies.
 \project currently supports one-to-one communication, but future network schemes
 will require one-to-many links and will likely employ clustering as a single
 part of its optimization routine.  For example a satellite may strategically
 orient its antenna toward the center of its cluster, maximizing signal strength
-for its immediate neighbors.
+for its immediate neighbors. Development of the library will continue with the goal
+of advancing collaborative sensing constellations into future remote sensing practice.
 
 %% =============================== REFERENCES ==================================
 
