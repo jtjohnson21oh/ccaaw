@@ -44,8 +44,6 @@ etoolbox}
 
 \maketitle
 
-%% =============================== ABSTRACT ====================================
-
 \IEEEpubid{
   \begin{minipage}{\textwidth} {
       ~ \\ \\ \\ \\ \\ \\
@@ -58,11 +56,24 @@ etoolbox}
   \end{minipage}
 }
 
+%% =============================== ABSTRACT ====================================
+
 \begin{abstract}
 
-  Distributed satellite constellations utilizing networks of small satellites will be a key enabler of new observing strategies in the next generation of NASA missions.  While it is quickly becoming feasible to establish communication networks among small satellites, a critical question is how these networks can be best utilized to achieve objectives.  Small satellite instruments are becoming more capable, but they are still resource constrained (i.e. power, data, scanning systems, etc.).  Adaptive instruments that intelligently adjust parameters {\color{black} on the fly} are essential for increasing operational value within these constraints, and the primary purpose of collaborative communication among small satellites is to achieve system-level adaptivity.  This could dramatically increases the complexity of the control algorithms for small satellites communication networks.  
-% 
-Application of cognitive communication is one promising method to address this problem.  In this paper, we discuss our recent investigations into how machine learning (ML) algorithms can be utilized in the high-level decision making of a communication system in a distributed satellite mission.  
+  Distributed satellite constellations utilizing networks of small satellites
+will be a key enabler of new observing strategies in the next generation of NASA
+missions.  While it is quickly becoming feasible to establish communication
+networks among small satellites, a critical question is how these networks can
+be best utilized to achieve objectives.  Small satellite instruments are
+becoming more capable, but they are still resource constrained (i.e. power,
+data, scanning systems, etc.).  Adaptive instruments that intelligently adjust
+parameters {\color{black} on the fly} are essential for increasing operational
+value within these constraints, and the primary purpose of collaborative
+communication among small satellites is to achieve system-level adaptivity.
+This could dramatically increase the complexity of the control algorithms for
+small satellite communication networks.
+%
+Application of cognitive communication is one promising method to address this problem.  In this paper, we discuss our recent investigations into how machine learning (ML) algorithms can be utilized in the high-level decision making of a communication system in a distributed satellite mission.
 
 \end{abstract}
 
@@ -80,12 +91,12 @@ Web, OSSE
 \section{Introduction}
 \label{sec:intro}
 
-It is envisioned that NASA's future space systems will be composed of large, inhomogeneous networks of small satellites and autonomous platforms \cite{ref1}.  These resource constrained systems, carrying an array of different instruments, will be expected to operate autonomously and collaboratively to achieve mission and science goals.  Unfortunately, current and near-future inter-satellite communications are highly constrained in terms of link availability, reliability, power and bandwidth.  Although future technologies (such as free space optical links) may alleviate some constraints, it is expected that future instruments will rapidly expand in both data volume and sensor reconfigurability \cite{ref2}.  In this way, it is not sufficient to simply increase the capabilities of the communication links.  Rather, it is also necessary to improve the complex decision making that communication systems perform, such as deciding when to transmit, what information is valuable to nodes of the network, and how to adapt local operations following the reception of new information.  Recently, cognitive space communication algorithms have been proposed as a solution to address the complexity of future inter-satellite communication systems \cite{ref3}.  
+It is envisioned that NASA's future space systems will be composed of large, inhomogeneous networks of small satellites and autonomous platforms \cite{ref1}.  These resource constrained systems, carrying an array of different instruments, will be expected to operate autonomously and collaboratively to achieve mission and science goals.  Unfortunately, current and near-future inter-satellite communications are highly constrained in terms of link availability, reliability, power and bandwidth.  Although future technologies (such as free space optical links) may alleviate some constraints, it is expected that future instruments will rapidly expand in both data volume and sensor reconfigurability \cite{ref2}.  In this way, it is not sufficient to simply increase the capabilities of the communication links.  Rather, it is also necessary to improve the complex decision making that communication systems perform, such as deciding when to transmit, what information is valuable to nodes of the network, and how to adapt local operations following the reception of new information.  Recently, cognitive space communication algorithms have been proposed as a solution to address the complexity of future inter-satellite communication systems \cite{ref3}.
 
-In this work, we show results of simulation studies to explore the advantages that cognition could offer for collaborative small-satellite networks.  Under a NASA Advanced Information System Technology program, we are currently developing an open-source \cpp library for the simulation of autonomous and collaborative networks of adaptive sensors \cite{ref6}.  This library and accompanying utilities allow for the efficient simulation of networks of satellites with realistic constraints in communication, power, and measurements.  A key focus of this software is the simulation of sensors that operate adaptively.  Adaptive sensors must make intelligent decisions regarding their configuration based on their own measurements as well as the measurements provided by other sensors in a network.  However, the extreme complexity of the decision space makes the development of optimal decision-making systems very difficult.  Thus, an approach based on cognition could offer an appealing solution.  
+In this work, we show results of simulation studies to explore the advantages that cognition could offer for collaborative small-satellite networks.  Under a NASA Advanced Information System Technology program, we are currently developing an open-source \cpp library for the simulation of autonomous and collaborative networks of adaptive sensors \cite{ref6}.  This library and accompanying utilities allow for the efficient simulation of networks of satellites with realistic constraints in communication, power, and measurements.  A key focus of this software is the simulation of sensors that operate adaptively.  Adaptive sensors must make intelligent decisions regarding their configuration based on their own measurements as well as the measurements provided by other sensors in a network.  However, the extreme complexity of the decision space makes the development of optimal decision-making systems very difficult.  Thus, an approach based on cognition could offer an appealing solution.
 %
-We investigate how our simulation tools could be useful for production of large training data-sets that capture the operation of collaborative, adaptive networks of small satellites.  
-We then investigate how such a data-set could be combined with machine learning techniques to train neural networks that could make intelligent decisions about when and what to communicate.  
+We investigate how our simulation tools could be useful for production of large training data-sets that capture the operation of collaborative, adaptive networks of small satellites.
+We then investigate how such a data-set could be combined with machine learning techniques to train neural networks that could make intelligent decisions about when and what to communicate.
 The applicability of these methods to future cognitive space communication will be discussed.
 
 %% =============================== OVERVIEW ====================================
@@ -98,7 +109,7 @@ The applicability of these methods to future cognitive space communication will 
 %%?	Future constellations operate more autonomously with communicaitons
 %%
 %%
-%%?	satellites will carry adaptive sensors.  
+%%?	satellites will carry adaptive sensors.
 %%?	Require ability to make decisions about how to adjust sensor parameters based on own measurements
 %%?	more complex to adjust parameters based on entire constelations
 %%
@@ -107,7 +118,7 @@ The applicability of these methods to future cognitive space communication will 
 %%?	represents the highest complexity of sensor network
 %%?	low TRL.  Difficult to grasp due to complexitu
 %%?	decision making, reacting to environment and very large space of information
-%%?	Can cognition be applied here? 
+%%?	Can cognition be applied here?
 %
 %Emerging remote sensor technology indicates a transition from few large monolithic satellites to greater numbers of heterogeneous small satellites.  Commercial and government entities have expressed interest in large-scale (1000 or more) small satellite constellations.  This transition will involve many system-level changes to how humans interact with and manage these systems.  For these complex systems, frequent ground contact (as is currently the case) will be impractical and inefficient.  Instead, most decisions related to scheduling or changing parameters will be done autonomously.
 %
@@ -162,11 +173,18 @@ The applicability of these methods to future cognitive space communication will 
 % networks, novel emerging services and applications enabled by such
 % concepts.
 
-Research into cognitive communication algorithms for satellite systems have focused on communications at a low level, including decision making regarding modulation, power, bandwidth, and error rate.  For example, on-line machine learning was used to optimize the selection of of software-defined radio parameters in \cite{ref4}.  Cognitive digital beamforming has also been applied to satellite communication \cite{ref5}.  However, cognition can also be applied to the higher-level aspects of a communication system, such as the intelligent routing of information within an autonomous satellite sensor network \cite{ref7}.  
+Research into cognitive communication algorithms for satellite systems have focused on communications at a low level, including decision making regarding modulation, power, bandwidth, and error rate.  For example, on-line machine learning was used to optimize the selection of of software-defined radio parameters in \cite{ref4}.  Cognitive digital beamforming has also been applied to satellite communication \cite{ref5}.  However, cognition can also be applied to the higher-level aspects of a communication system, such as the intelligent routing of information within an autonomous satellite sensor network \cite{ref7}.
 
-Cognition may also offer an improvement in the complex, higher level decisions of communication in the context of mission and science objectives.  At this level, cognition is applied to the operation of the network with the decision making primarily influenced by the constraints of the space communication network links.  Communication networks within distributed small satellite constellations will enable collaborative operations, and, when these satellites are equipped with adaptive sensors, collaborative communications will enable system-level adaptivity.  
+Cognition may also offer an improvement in the complex, higher level decisions of communication in the context of mission and science objectives.  At this level, cognition is applied to the operation of the network with the decision making primarily influenced by the constraints of the space communication network links.  Communication networks within distributed small satellite constellations will enable collaborative operations, and, when these satellites are equipped with adaptive sensors, collaborative communications will enable system-level adaptivity.
 
-In order to illustrate this, consider an example sequence of events shown in Figure~\ref{fig:figureColab}(f).  In this scenario, Satellite ``A'' measures cloud depth in the Pacific Ocean (blue line).  It then predicts the arrival of a follow-up satellite and relays a message through satellites ``B'' and ``C'' to queue ``D'' for a measurement with a different sensor (red line).  After the second measurement is made, information is fed back to the originating satellite (Satellite ``A''), so it can learn about how valuable the information was and how successfully the communication route over the network was.  
+In order to illustrate this, consider an example sequence of events shown in
+Figure~\ref{fig:figureColab}.  In this scenario, Satellite ``A'' measures
+cloud depth in the Pacific Ocean (blue line).  It then predicts the arrival of a
+follow-up satellite and relays a message through satellites ``B'' and ``C'' to
+queue ``D'' for a measurement with a different sensor (red line).  After the
+second measurement is made, information is fed back to the originating satellite
+(Satellite ``A''), so it can learn about how valuable the information was and
+how successful the communication route over the network was.
 
 \begin{figure}[b!]
   \begin{center}
@@ -176,7 +194,7 @@ In order to illustrate this, consider an example sequence of events shown in Fig
   \label{fig:figureColab}
 \end{figure}
 
-Figure~\ref{fig:figure2} shows a depiction of the perception-action cycle as it applies to our scenario of interest.  Here, a small satellite serves as the cognitive entity.  The action it takes is to determine what information to send and what route to try to send it on.  This action influences the rest of the small satellite constellation by causing them to adjust their sensors and make measurements in an improved manners.  The information about this influence is fed back to the original satellite so that it can learn from this reaction.   
+Figure~\ref{fig:figure2} shows a depiction of the perception-action cycle as it applies to our scenario of interest.  Here, a small satellite serves as the cognitive entity.  The action it takes is to determine what information to send and what route to try to send it on.  This action influences the rest of the small satellite constellation by causing them to adjust their sensors and make measurements in an improved manner.  The information about this influence is fed back to the original satellite so that it can learn from this reaction.
 
 %A model for cognitive communications is illustrated in , the perception-action cycle for proposed autonomous networks.  The model describes a satellite network which communicates collaboratively to perform cognitive routines.  Perception is not limited to a satellite's own measurements; it involves network interaction as well.  Nodes in this network take action to learn from perception, improving operations by re-configuring hardware or updating an internal model.  In this way, the network relies less on human interaction and becomes \textit{autonomous}.
 
@@ -282,7 +300,7 @@ The software logs simulation data to files accessible by external machine learni
 
 Python scripts are provided not only for receiving simulation data at a low level, but also many high level analysis tasks.  In fact, all figures in this document were produced using the tools provided by the library.  Primary third-party packages used include the following: Numpy, Pandas, Cython, NetCDF4, Matplotlib, Cartopy, Scikitlearn, TensorFlow, and SciPy.  These enable post processing for plots and animations or to train machine learning algorithms.  Numpy and Pandas provide powerful linear algebra and statistics operations.  Cartopy provides extensive map projections and transformations which support visualizing satellite positions and truth data.  Machine learning algorithms are available in the Scikitlearn and Tensorflow packages, which interface well with Numpy and Pandas structures.
 %
-For example, satellite parameter data (Figure~\ref{fig:data}(a)) is plotted in Figure~\ref{fig:processing}. %to expose and potentially exploit correlations.  Several of these seem strongly correlated and many are also periodic.  Potential high-level communications optimizations may involve predicting when a satellite has the most visible neighbors (available line-of-sight links).  An algorithm for power management scheduling may use the instantaneous charge or power to plan efficient sensor operation.
+For example, satellite parameter data (Figure~\ref{fig:data}(a)) is plotted in Figure~6. %to expose and potentially exploit correlations.  Several of these seem strongly correlated and many are also periodic.  Potential high-level communications optimizations may involve predicting when a satellite has the most visible neighbors (available line-of-sight links).  An algorithm for power management scheduling may use the instantaneous charge or power to plan efficient sensor operation.
 
 \begin{figure}[t]
   \begin{center}
@@ -379,11 +397,16 @@ Simulation data described in Figure~\ref{fig:data}(b) is produced by a simulatio
 
 \small
 \begin{thebibliography}{9}
+% \bibitem{ref1} {
+%     J. Spann, D. Pierce, and A. Petro, ``NASA Perspectives on CubeSat Technology
+%     and Highlighted Activities'',
+%     \textit{SNAP Nanosatellite/CubeSat Subject Matter Expert Exchange},
+%     Brasilia, Brasil, June 2016}
 \bibitem{ref1} {
-    J. Spann, D. Pierce, and A. Petro, ``NASA Perspectives on CubeSat Technology
-    and Highlighted Activities'',
-    \textit{SNAP Nanosatellite/CubeSat Subject Matter Expert Exchange},
-    Brasilia, Brasil, June 2016}
+    Gilbert J. Clark, Wesley Eddy, Sandra K. Johnson, David E. Brooks, and
+    James L. Barnes, ``Architecture for Cognitive Networking within NASA’s
+    Future Space Communications Infrastructure'', 34th AIAA International
+    Communications Satellite Systems Conference. Cleveland, OH.}
 \bibitem{ref2} {
     A. G. Schmidt, G. Weisz, M. French, T. Flatley and C. Y. Villalpando,
     ``SpaceCubeX: A Framework For Evaluating Hybrid Multi-Core CPU/FPGA/DSP
